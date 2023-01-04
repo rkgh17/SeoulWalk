@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface Course1Repository extends JpaRepository<Course1, BigDecimal>{
 	
-	@Query(value = "SELECT * FROM COURSE1", nativeQuery = true)
-	List<Object[]> selectAll();
+	@Query(value = "SELECT lat, lng FROM COURSE1", nativeQuery = true)
+	List<String> selectAll();
 }

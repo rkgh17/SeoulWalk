@@ -22,18 +22,20 @@ public class CourseController {
 	}
 	@RequestMapping("/home/course/course1")
 	public String course1(Model model) {
-
-		//List csresult = cs1Repository.selectAll();
 		
 		// 데이터베이스 값 가져오기
-		// ArrayList<Object[]> cs = (ArrayList<Object[]>) cs1Repository.selectAll();
-		List<Object[]> cs1List = cs1Repository.selectAll();
+		List<String> cs1List = cs1Repository.selectAll();
+		
+		// 가져온 값 확인 - 타입 : java.util.ArrayList - 0번지 값 - 37.689445,127.047285
+//		System.out.println(cs1List.getClass().getName());
+//		System.out.println(cs1List.get(0));
+		
 		
 		
 		// 프런트로 넘겨주기
 		model.addAttribute("cs",cs1List);
 		// 배열 값 출력
-		//System.out.println(Arrays.deepToString(cs.toArray()));
+//		System.out.println(Arrays.deepToString(cs1List.toArray()));
 		
 		return "course1";
 	}
