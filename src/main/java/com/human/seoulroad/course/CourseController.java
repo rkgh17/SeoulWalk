@@ -4,10 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.google.gson.Gson;
+
+
+
+
+
 
 @Controller
 public class CourseController {
@@ -32,10 +40,20 @@ public class CourseController {
 		
 		
 		
-		// 프런트로 넘겨주기
-		model.addAttribute("cs",cs1List);
+		// 프런트로 넘겨주기 - 타임리프
+//		model.addAttribute("cs",cs1List);
+		
 		// 배열 값 출력
 //		System.out.println(Arrays.deepToString(cs1List.toArray()));
+		
+		// 프런트로 넘겨주기 - 자바스크립트 (json으로)
+		String json = new Gson().toJson(cs1List);
+//		System.out.println(json);
+
+		model.addAttribute("cs",json);
+		
+
+		
 		
 		return "course1";
 	}

@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+//CREATE TABLE IF NOT EXISTS COURSE1 AS SELECT * FROM CSVREAD('classpath:course1.csv');
+
 @Repository
 public interface Course1Repository extends JpaRepository<Course1, BigDecimal>{
 	

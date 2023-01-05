@@ -14,6 +14,8 @@ import lombok.Getter;
 public class Course1 {
 	
 	@Id
+	private int sortnum;
+	
 	@Column(precision = 9)
 	private BigDecimal lat;
 	
