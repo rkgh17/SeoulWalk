@@ -22,10 +22,10 @@ public class MainController {
 		return "introduce";
 	}
 
-	@RequestMapping("/home/other")
-	public String other() {
-		return "other";
-	}
+//	@RequestMapping("/home/other")
+//	public String other() {
+//		return "other";
+//	}
 
 	/*
 	 * @GetMapping(value = {"/home/no",
@@ -35,10 +35,10 @@ public class MainController {
 	
 
 	
-	@GetMapping("/home/other?addressKindU=a&addressKindD=노원구&distance=5between10&duration=2under&difficulty=normal")
-	public String other_course() {
-		return "other_course";
-	}
+//	@GetMapping("/home/other?addressKindU=a&addressKindD=노원구&distance=5between10&duration=2under&difficulty=normal")
+//	public String other_course() {
+//		return "other_course";
+//	}
 
 	@RequestMapping("/recommendcourse")
 	public String rcmcourse() {
