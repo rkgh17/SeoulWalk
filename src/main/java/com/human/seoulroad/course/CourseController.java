@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.gson.Gson;
 
-
+@RequestMapping("/course")
 @Controller
 public class CourseController {
 	
@@ -18,11 +18,11 @@ public class CourseController {
 	CourseRepository csRepository;
 	
 	
-	@RequestMapping("/home/course")
+	@RequestMapping("")
 	public String course() {
 		return "course";
 	}
-	@RequestMapping("/home/course/course1")
+	@RequestMapping("/1")
 	public String course1(Model model) {
 		
 		// 데이터베이스 값 가져오기
@@ -49,7 +49,7 @@ public class CourseController {
 		return "course1";
 	}
 	
-	@RequestMapping("/home/course/course2")
+	@RequestMapping("/2")
 	public String course2(Model model) {
 		List<String> cs = csRepository.selectAll2();
 		String json = new Gson().toJson(cs);
@@ -57,7 +57,7 @@ public class CourseController {
 		return "course2";
 	}
 	
-	@RequestMapping("/home/course/course3")
+	@RequestMapping("/3")
 	public String course3(Model model) {
 		List<String> cs = csRepository.selectAll3();
 		String json = new Gson().toJson(cs);
@@ -65,7 +65,7 @@ public class CourseController {
 		return "course3";
 	}
 	
-	@RequestMapping("/home/course/course4")
+	@RequestMapping("/4")
 	public String course4(Model model) {
 		List<String> cs = csRepository.selectAll4();
 		String json = new Gson().toJson(cs);
@@ -73,7 +73,7 @@ public class CourseController {
 		return "course4";
 	}
 	
-	@RequestMapping("/home/course/course5")
+	@RequestMapping("/5")
 	public String course5(Model model) {
 		List<String> cs = csRepository.selectAll5();
 		String json = new Gson().toJson(cs);
@@ -81,7 +81,7 @@ public class CourseController {
 		return "course5";
 	}
 	
-	@RequestMapping("/home/course/course6")
+	@RequestMapping("/6")
 	public String course6(Model model) {
 		List<String> cs = csRepository.selectAll6();
 		String json = new Gson().toJson(cs);
@@ -89,7 +89,7 @@ public class CourseController {
 		return "course6";
 	}
 	
-	@RequestMapping("/home/course/course7")
+	@RequestMapping("/7")
 	public String course7(Model model) {
 		List<String> cs = csRepository.selectAll7();
 		String json = new Gson().toJson(cs);
@@ -97,7 +97,7 @@ public class CourseController {
 		return "course7";
 	}
 	
-	@RequestMapping("/home/course/course8")
+	@RequestMapping("/8")
 	public String course8(Model model) {
 		List<String> cs = csRepository.selectAll8();
 		String json = new Gson().toJson(cs);

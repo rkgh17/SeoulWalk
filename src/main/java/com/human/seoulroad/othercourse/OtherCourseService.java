@@ -24,30 +24,58 @@ public class OtherCourseService {
 
     private final OtherCourseRepository othercourseRepository;
 
+    // 테스트용 SELECT ALL
 	public List<OtherCourse> getList() {
-	
 		return this.othercourseRepository.findAll();
 	}
 	
-	
-	// 파라미터(강남)을 받아서 othercourseRepository의 searchGangnam이라는 이름의 db검색 메서드를 호출
-	public List<OtherCourse> test(String pram){
-		return this.othercourseRepository.searchGangnam(pram);
+	// 그밖의 길 검색 서비스
+	public List<OtherCourse> getsearch( String addressKindU,
+									 	String addressKindD, 
+									 	String distance,
+									 	String duration,
+									 	String difficulty){
+		String newdis[] = dis(distance);
+		String newdur[] = dur(duration);
+		
+		
+		// 레포지토리 분기함수
+		return this.othercourseRepository.search(addressKindU,
+												 addressKindD,
+												 difficulty,
+												 Float.parseFloat(newdis[0]),
+												 Float.parseFloat(newdis[1]),
+												 Float.parseFloat(newdur[0]),
+												 Float.parseFloat(newdur[1]));
 	}
 	
-
-    private Specification<OtherCourse> search(String kw) {
-        return new Specification<>() {
-            private static final long serialVersionUID = 1L;
-            @Override
-            public Predicate toPredicate(Root<OtherCourse> q, CriteriaQuery<?> query, CriteriaBuilder cb) {
-                query.distinct(true);  // 중복을 제거 
-                
-                return cb.or(cb.like(q.get("courseDivision"), "%" + kw + "%"), // 제목 
-                        cb.like(q.get("courseBorough"), "%" + kw + "%"));     // 내용    
-            }
-        };
-    }
+	
+	// 코스길이 분기 함수
+	public static String[] dis(String distance) {
+		if (distance.equals("5under")) {
+			return new String[] {"0.0","4.9"};
+		}
+		else if (distance.equals("5between10")) {
+			return new String[] {"5.0","9.9"};
+		}
+		else {
+			return new String[] {"10.1","50.0"};
+		}
+	}
+	
+	
+	// 소요시간 분기 함수
+	public static String[] dur(String duration) {
+		if (duration.equals("2under")) {
+			return new String[] {"0","119"};
+		}
+		else if (duration.equals("2between4")) {
+			return new String[] {"120","240"};
+		}
+		else {
+			return new String[] {"241","480"};
+		}
+	}
 	
 	
 }

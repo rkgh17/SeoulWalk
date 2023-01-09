@@ -1,11 +1,11 @@
 <html layout:decorate="~{layout}"> 
 <body>
 <div layout:fragment="content" class="container my-5">
-    <div class="background" th:style="'background-image:url('+ @{/img/background02.jpg} +');'">
+    <div style="border: solid darkgrey 2px; border-radius:2%">
 		
-		<div class="introduceTitle" style="margin: 10px; margin-bottom: 15px;">
-			&nbsp;&nbsp;그밖의 길
-		</div><br><br>
+		<div style="margin: 10px; margin-bottom: 15px;">
+			<h2 style="padding : 20px; margin-left:20px">그밖의 길</h2>
+		</div>
 		
 		<!--<form method="get">-->
 		<form method="get" action="form-action" id="formid">
@@ -15,8 +15,8 @@
 		          <select class="form-control" id="addressKindU" name="addressKindU" onchange="addressKindChange(this)">
 		            <!--<option>강북권/강남권 선택</option>-->
 		            <option selected value="default">강북권/강남권 선택</option>		            		            
-		            <option value="a">강남</option>
-		            <option value="b">강북</option>
+		            <option value="강남">강남</option>
+		            <option value="강북">강북</option>
 		          </select>
 		        </div>
 		        
@@ -36,7 +36,7 @@
 		      <label><input type="radio" name="distance" value="5under"> 5km 미만</label>&nbsp;&nbsp;&nbsp;
 		      <label><input type="radio" name="distance" value="5between10"> 5~10km</label>&nbsp;&nbsp;&nbsp;
 		      <label><input type="radio" name="distance" value="10over"> 10km 초과</label>
-	      </div> 
+	      </div>
 		  <br>
 	      
 	      <div class="alignment">소요시간</div>
@@ -49,9 +49,9 @@
 	      <br>
 	      <div class="alignment">난이도</div>
 	      <div class="mainPage03">
-		      <label><input type="radio" name="difficulty" value="easy"> 초급</label>&nbsp;&nbsp;&nbsp;
-		      <label><input type="radio" name="difficulty" value="normal"> 중급</label>&nbsp;&nbsp;&nbsp;
-		      <label><input type="radio" name="difficulty" value="hard"> 고급</label>
+		      <label><input type="radio" name="difficulty" value="초급"> 초급</label>&nbsp;&nbsp;&nbsp;
+		      <label><input type="radio" name="difficulty" value="중급"> 중급</label>&nbsp;&nbsp;&nbsp;
+		      <label><input type="radio" name="difficulty" value="고급"> 고급</label>
 	      </div>
 	      <br><br><br>
 	      <div class="mainPage02">
@@ -67,8 +67,8 @@
     var gangnam = ["강남구", "강동구", "강서구", "관악구", "구로구", "금천구", "동작구", "서초구", "송파구", "양천구", "영등포구"];
     var target = document.getElementById("addressKindD");
 
-    if(e.value == "a") var d = gangbuk;
-    else if(e.value == "b") var d = gangnam;
+    if(e.value == "강북") var d = gangbuk;
+    else if(e.value == "강남") var d = gangnam;
 
 
     target.options.length = 0;

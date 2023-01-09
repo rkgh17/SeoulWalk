@@ -1,6 +1,5 @@
 package com.human.seoulroad.othercourse;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,11 +15,21 @@ public interface OtherCourseRepository extends JpaRepository<OtherCourse, String
 	
 	// JPA 기본 메서드 (참고 : https://frogand.tistory.com/22)
 	// 따라서 쿼리문을 짜주지 않아도 findAll이란 예약어를 통해 모든 데이터를 찾아서 보내줌
-//	@Query(value = "SELECT * FROM SEOUL_TRAILS", nativeQuery = true)
 	List<OtherCourse> findAll();
 	
-	// searchGangnam이란 이름의 메서드를 정의
-	// 네이티브 쿼리 - Service를 통해 받아온 파라미터 todb(강남) 과 같은 문자열을 찾음 
-	@Query(value = "SELECT * FROM SEOUL_TRAILS WHERE COURSE_DIVISION LIKE %:todb%", nativeQuery = true)
-	public List<OtherCourse> searchGangnam(@Param("todb")String todb);
+
+	// 그밖의 길 조회 쿼리
+	@Query(value = "SELECT * FROM SEOUL_TRAILS WHERE "
+			+ "(COURSE_DIVISION LIKE %:addressKindU% AND"
+			+ " COURSE_BOROUGH LIKE %:addressKindD% AND"
+			+ " COURSE_DIFFICULTY LIKE %:difficulty%) "
+			+ "AND (COURSE_DISTANCE BETWEEN :dis1 AND :dis2) "
+			+ "AND (ESTIMATED_DURATION BETWEEN :dur1 AND :dur2) ", nativeQuery = true)
+	public List<OtherCourse> search(@Param("addressKindU")String addressKindU, 
+									@Param("addressKindD") String addressKindD,
+									@Param("difficulty") String difficulty,
+									@Param("dis1") Float dis1,
+									@Param("dis2") Float dis2,
+									@Param("dur1") Float dur1,
+									@Param("dur2") Float dur2);
 }

@@ -13,7 +13,6 @@ import lombok.Setter;
 
 @Entity
 @Getter
-@Setter
 @Table(name = "SEOUL_TRAILS")
 public class OtherCourse {
 	

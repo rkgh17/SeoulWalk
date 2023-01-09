@@ -126,11 +126,12 @@ p{
      align-items: center;
 }
  .mainPage02 {
-    box-sizing: border-box;   
+     box-sizing: border-box;   
      display: flex;
      flex-direction: row;
      justify-content: center;
      align-items: center;
+     margin-bottom: 20px;
 }
  .mainPage03 {
     box-sizing: border-box;   
@@ -200,8 +201,13 @@ th, td {
 
 /* 로그인 영역, 추천코스 css */
 .divmp{
-	margin : 10px;
-	padding : 5px;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	margin:10px;
+	margin-right: 15px;
+	padding:5px;
+	padding-top:10px;
 }
 .hometext{
 	font-size : 35px;
@@ -224,6 +230,15 @@ th, td {
 .sociallogin{
 	margin-bottom: 4vw;
 }
+.login-out{
+	font-size : 30px;
+	text-decoration: none;
+	color : black;
+}
+.login-out:hover{
+	color : darkgrey;
+}
+
 
 /* 추천코스 영역 */
 .rcmcontainer{
@@ -233,11 +248,6 @@ th, td {
 	flex-wrap: wrap;
 }
 
-.login-out{
-	font-size : 30px;
-	text-decoration: none;
-	color : black;
-}
 
 .rcmcard{
 	width: 45%;
@@ -250,6 +260,7 @@ th, td {
 .rcmcardimg{
 	margin:0px;
 	border-radius:15%;
+	cursor:pointer;
 }
 .rcmdardtitle{
 	font-size: 2.7vw;
@@ -257,3 +268,34 @@ th, td {
 	margin-right: 18px;
 }
 
+/*게시판 영역*/
+.bbscontent{
+	display:flex;
+	width: 100%;
+	height:1000px;
+	border:solid darkgrey 1px;
+}
+
+.bbs-left{
+	flex-grow:1;
+	border:solid red 1px;
+	margin:5px;
+	display:flex;
+	flex-flow: column;
+}
+.bbs-left-items{
+	text-decoration: none;
+	font-size:25px;
+	margin-left:10px;
+	margin-top:20px;
+	height:40px;
+}
+.bbs-left-items:active{
+	background-color: black;
+}
+
+.bbs-right{
+	flex-grow: 4;
+	border:solid blue 1px;
+	margin:5px;
+}
