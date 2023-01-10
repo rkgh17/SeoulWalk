@@ -1,6 +1,7 @@
 package com.human.seoulroad.user;
 
 import java.util.Collections;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -11,6 +12,8 @@ import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
+
+import com.human.seoulroad.DataNotFoundException;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -53,5 +56,20 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 		
 		return userRepository.save(siteuser);
 	}
+	
+	// 사용자 조회 메서드
+    public SiteUser getUser(String username) {
+    	
+    	// UserRepository - findByusername
+        Optional<SiteUser> siteUser = this.userRepository.findBynickname(username);
+        if (siteUser.isPresent()) {
+            return siteUser.get(); 
+        }
+        
+        // 조회 실패
+        else {
+            throw new DataNotFoundException("siteuser not found");
+        }
+    }
 
 }

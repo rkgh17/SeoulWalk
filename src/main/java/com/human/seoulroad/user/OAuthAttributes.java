@@ -59,9 +59,11 @@ public class OAuthAttributes {
     			(String) attributes.get("email"));
     }
     
+    
+    // 닉네임 설정 메서드
     public SiteUser toEntity() {
     	int idx = email.indexOf("@");
-    	String nickname = email.substring(0,idx);
+    	String nickname = email.substring(0,idx-4) + "****" + email.substring(idx+1, email.length()-4);
     	
     	return new SiteUser(name, email, nickname);
     }

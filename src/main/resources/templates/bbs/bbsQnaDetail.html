@@ -1,0 +1,63 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-5">
+<h1 style="padding-top:15px; padding-bottom:15px;">소통 게시판</h1>
+<hr>
+
+<div class="bbscontent">
+
+	<!-- 왼쪽 영역 -->
+	<div class="bbs-left">
+		<a th:href="@{/board/notice}" class="bbs-left-items">&nbsp;&nbsp;공지사항 </a>
+		<hr>
+		<a th:href="@{/board/qna}" class="bbs-left-items">&nbsp;&nbsp;소통 게시판 </a>
+		<hr>
+	</div>
+	
+	<!-- 오른쪽 영역 -->
+	<div class="bbs-right">
+	
+	<!-- 테이블 상세 영역 -->
+	<div style = "padding-top : 20px; padding:10px;">
+    <table class="table">
+    <colgroup>
+    	<col class="width1">
+    	<col class="width2">
+    	<col class="width1">
+    	<col class="width2">
+    	<col class="width1">
+    	<col class="width1">
+    </colgroup>
+    <tbody>
+		<tr>
+			<th scope="row">
+				<span>제목</span>
+			</th>
+			<td colspan="3" th:text="${question.subject}"></td>
+		</tr>
+		<tr>
+			<th scope="row">
+				<span>작성자</span>
+			</th>
+			<td >${question.author.nickname}</td>
+
+			<th scope="row">
+				<span>등록일</span>
+			</th>
+			<td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+		</tr>
+		<tr>
+			<td colspan="4" th:text="${question.content}"></td>
+		</tr>
+	</tbody>
+    </table>
+	
+	<!-- 답변 영역 -->
+	<div style="padding-top:20px">
+	
+	
+	
+	</div>
+	</div>
+
+</div>
+</html>
