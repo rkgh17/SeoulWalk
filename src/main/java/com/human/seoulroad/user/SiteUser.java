@@ -21,11 +21,11 @@ public class SiteUser {
     @Column(nullable = false)
     private String name;
 	
-    @Column(nullable = false)
+    @Column(unique = true)
     private String email;
+    
+    @Column(nullable = false)
     private String role = "ROLE_USER";
-	
-	@Column
 	private String nickname;
 	
 	public SiteUser(String name, String email, String nickname){

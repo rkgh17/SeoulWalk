@@ -58,10 +58,10 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 	}
 	
 	// 사용자 조회 메서드
-    public SiteUser getUser(String username) {
+    public SiteUser getUser(String name) {
     	
     	// UserRepository - findByusername
-        Optional<SiteUser> siteUser = this.userRepository.findBynickname(username);
+        Optional<SiteUser> siteUser = this.userRepository.findById(name);
         if (siteUser.isPresent()) {
             return siteUser.get(); 
         }

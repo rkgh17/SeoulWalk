@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.human.seoulroad.answer.AnswerForm;
 import com.human.seoulroad.user.CustomOAuth2UserService;
+import com.human.seoulroad.user.LoginUser;
 import com.human.seoulroad.user.SiteUser;
 
 import jakarta.validation.Valid;
@@ -62,7 +63,7 @@ public class QuestionController {
 	@PreAuthorize("isAuthenticated()") // 로그인 필요
 	@GetMapping("qna/create")
 	public String questionCreate(QuestionForm questionForm) {
-        return "home";
+        return "bbs/bbsQnaForm";
     }
 	
 	// 질문 등록 페이지 매핑
@@ -71,11 +72,17 @@ public class QuestionController {
 	// 제목, 내용, 작성자를 파라미터로 받음
 	public String questionCreate(@Valid QuestionForm questionForm, BindingResult bindingResult, Principal principal) {
         if (bindingResult.hasErrors()) {
+        	String user = principal.getName();
+        	System.out.println(user);
             return "bbs/bbsQnaForm";
         }
-        SiteUser siteUser = this.userService.getUser(principal.getName());
-        this.questionService.create(questionForm.getSubject(), questionForm.getContent(), siteUser);
-        return "redirect:bbs/bbsQna";
+        
+        String user = principal.getName();
+        
+        System.out.println(user);
+//        SiteUser siteUser = this.userService.getUser(principal.getName());
+//        this.questionService.create(questionForm.getSubject(), questionForm.getContent(), siteUser);
+        return "redirect:/board/qna";
     }
 
 }

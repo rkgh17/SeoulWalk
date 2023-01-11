@@ -53,7 +53,14 @@
 	
 	<!-- 답변 영역 -->
 	<div style="padding-top:20px">
-	
+    <form th:action="@{|/answer/create/${question.id}|}" th:object="${answerForm}" method="post" class="my-3">
+        <div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
+        	<div th:each="err : ${#fields.allErrors()}" th:text="${err}" />
+        </div>
+        <textarea id="aft1" sec:authorize="isAnonymous()" disabled th:field="*{content}"></textarea>
+        <textarea sec:authorize="isAuthenticated()" th:field="*{content}"></textarea>
+        <input type="submit" value="답변등록" class="btn btn-success my-2">
+    </form>
 	
 	
 	</div>
