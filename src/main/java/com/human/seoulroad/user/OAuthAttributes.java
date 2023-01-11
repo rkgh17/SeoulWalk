@@ -53,7 +53,8 @@ public class OAuthAttributes {
     }
     
     private static OAuthAttributes ofGoogle(String userNameAttributeName, Map<String, Object> attributes) {
-    	return new OAuthAttributes(attributes,
+    	return new OAuthAttributes(
+    			attributes,
     			userNameAttributeName,
     			(String) attributes.get("name"),
     			(String) attributes.get("email"));
@@ -61,11 +62,18 @@ public class OAuthAttributes {
     
     
     // 닉네임 설정 메서드
+//    public SiteUser toEntity() {
+//    	int idx = email.indexOf("@");
+//    	String nickname = email.substring(0,idx-4) + "****" + email.substring(idx+1, email.length()-4);
+//    	
+//    	return new SiteUser(name, email, nickname);
+//    }
+    
     public SiteUser toEntity() {
-    	int idx = email.indexOf("@");
-    	String nickname = email.substring(0,idx-4) + "****" + email.substring(idx+1, email.length()-4);
-    	
-    	return new SiteUser(name, email, nickname);
+    	return SiteUser.builder()
+    			.name(name)
+    			.email(email)
+    			.build();
     }
 
 }

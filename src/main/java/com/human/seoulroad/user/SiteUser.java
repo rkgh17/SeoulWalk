@@ -5,14 +5,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
 @Entity
 @NoArgsConstructor
-public class SiteUser {
+public class SiteUser{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +26,13 @@ public class SiteUser {
     
     @Column(nullable = false)
     private String role = "ROLE_USER";
-	private String nickname;
 	
-	public SiteUser(String name, String email, String nickname){
+	
+	@Builder
+	public SiteUser(String name, String email, String nickname, String Role){
 		this.name = name;
 		this.email = email;
-		this.nickname = nickname;
+		this.role = role;
 	}
 	
 	public SiteUser update(String name) {

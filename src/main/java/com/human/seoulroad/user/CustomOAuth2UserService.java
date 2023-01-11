@@ -28,8 +28,10 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 	
 	@Override
 	public OAuth2User loadUser(OAuth2UserRequest oAuth2UserRequest) throws OAuth2AuthenticationException {
-		OAuth2UserService oAuth2UserService = new DefaultOAuth2UserService();
-		OAuth2User oAuth2User = oAuth2UserService.loadUser(oAuth2UserRequest);
+		
+		OAuth2UserService<OAuth2UserRequest, OAuth2User> delegate = new DefaultOAuth2UserService();
+		
+		OAuth2User oAuth2User = delegate.loadUser(oAuth2UserRequest);
 		
 		
 		
@@ -42,13 +44,16 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 		
 		
 		httpSession.setAttribute("user", new SessionUserDTO(siteuser));
+
 		
 		System.out.println(attributes.getAttributes());
-		return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority("ROLE_USER"))
+		return new DefaultOAuth2User(
+				Collections.singleton(new SimpleGrantedAuthority("ROLE_USER"))
 				, attributes.getAttributes()
 				, attributes.getNameAttributeKey());
 	}
 	
+
 	private SiteUser saveOrUpdate(OAuthAttributes attributes) {
 		SiteUser siteuser = userRepository.findByEmail(attributes.getEmail())
 				.map(entity -> entity.update(attributes.getName()))
@@ -57,15 +62,26 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 		return userRepository.save(siteuser);
 	}
 	
+	
+	// httpsession 관리
+	public SessionUserDTO plss() {
+		
+		SessionUserDTO user = (SessionUserDTO) httpSession.getAttribute("user");
+		
+		return user;
+	}
+	
+	
 	// 사용자 조회 메서드
     public SiteUser getUser(String name) {
     	
     	// UserRepository - findByusername
-        Optional<SiteUser> siteUser = this.userRepository.findById(name);
+        Optional<SiteUser> siteUser = this.userRepository.findByName(name);
         if (siteUser.isPresent()) {
-            return siteUser.get(); 
+        	System.out.println("조회 성공");
+            return siteUser.get();
         }
-        
+
         // 조회 실패
         else {
             throw new DataNotFoundException("siteuser not found");
