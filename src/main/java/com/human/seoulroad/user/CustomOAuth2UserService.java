@@ -42,7 +42,6 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 		
 		SiteUser siteuser = saveOrUpdate(attributes);
 		
-		
 		httpSession.setAttribute("user", new SessionUserDTO(siteuser));
 
 		
@@ -63,8 +62,8 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 	}
 	
 	
-	// httpsession 관리
-	public SessionUserDTO plss() {
+	// httpsession get
+	public SessionUserDTO getSession() {
 		
 		SessionUserDTO user = (SessionUserDTO) httpSession.getAttribute("user");
 		
@@ -72,11 +71,11 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 	}
 	
 	
-	// 사용자 조회 메서드
-    public SiteUser getUser(String name) {
+	// 사용자 조회 메서드 - 이메일
+    public SiteUser getUser(String email) {
     	
     	// UserRepository - findByusername
-        Optional<SiteUser> siteUser = this.userRepository.findByName(name);
+        Optional<SiteUser> siteUser = this.userRepository.findByEmail(email);
         if (siteUser.isPresent()) {
         	System.out.println("조회 성공");
             return siteUser.get();
@@ -87,5 +86,6 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
             throw new DataNotFoundException("siteuser not found");
         }
     }
+
 
 }

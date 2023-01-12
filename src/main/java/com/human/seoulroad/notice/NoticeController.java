@@ -1,4 +1,4 @@
-package com.human.seoulroad.question;
+package com.human.seoulroad.notice;
 
 import java.security.Principal;
 
@@ -15,67 +15,58 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.human.seoulroad.answer.AnswerForm;
 import com.human.seoulroad.user.CustomOAuth2UserService;
 import com.human.seoulroad.user.SessionUserDTO;
 import com.human.seoulroad.user.SiteUser;
 
-import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @RequestMapping("board")
 @Controller
-public class QuestionController {
+public class NoticeController {
 	
-	private final QuestionService questionService;
+	private final NoticeService noticeService;
 	private final CustomOAuth2UserService userService;
 
-	
-	// qna 페이지 매핑
-	@GetMapping("qna")
+	// 공지 페이지 매핑
+	@GetMapping("notice")
 	public String qna(Model model,
 			@RequestParam(value="page", defaultValue="0") int page,
 			@RequestParam(value="kw", defaultValue="") String kw) {
 		
-		Page<Question> paging = this.questionService.getList(page, kw);
+		Page<Notice> paging = this.noticeService.getList(page, kw);
 		model.addAttribute("paging",paging);
 		model.addAttribute("kw", kw);
 		
-		return "bbs/bbsQna";
+		return "bbs/bbsNotice";
 	}
 	
-	
-	// 질문 상세 페이지 매핑
-	@RequestMapping(value = "qna/detail/{id}")
-	public String detail(Model model, @PathVariable("id") Integer id,
-			AnswerForm answerForm) {
+	// 공지 상세 페이지 매핑
+	@RequestMapping(value = "notice/detail/{id}")
+	public String detail(Model model, @PathVariable("id") Integer id) {
 		
 		// 서비스를 통해 객체를 가져와 템플릿에 전달
-		Question question = this.questionService.getQuestion(id);
-		model.addAttribute("question", question);
+		Notice notice = this.noticeService.getNotice(id);
+		model.addAttribute("notice", notice);
 		
-		return "bbs/bbsQnaDetail";
+		return "bbs/bbsNoticeDetail";
 	}
 	
-	// 질문 등록 메서드 
-	@GetMapping("qna/create")
-	public String questionCreate(QuestionForm questionForm) {
-		if(userService.getSession() == null) {
-			return "login";
-		}
-		
-        return "bbs/bbsQnaForm";
-    }
-	
+	// 공지 등록 메서드
+	@GetMapping("notice/create")
+	public String noticeCreate(NoticeForm noticeForm) {
+		return "bbs/bbsNoticeForm";
+	}
+
 	// 질문 등록 처리 메서드
-	@PostMapping("qna/create")
+	@PostMapping("notice/create")
 	// 제목, 내용, 작성자를 파라미터로 받음
-	public String questionCreate(@Valid QuestionForm questionForm, BindingResult bindingResult, Principal principal) {
+	public String questionCreate(@Valid NoticeForm noticeForm, BindingResult bindingResult, Principal principal) {
         if (bindingResult.hasErrors()) {
         	
-            return "bbs/bbsQnaForm";
+            return "bbs/bbsNoticeForm";
         }
 
         // 로그인 안한경우
@@ -85,87 +76,86 @@ public class QuestionController {
         	SessionUserDTO userinfo = userService.getSession();
         	SiteUser siteUser = this.userService.getUser(userinfo.getEmail());
         	
-        	this.questionService.create(questionForm.getSubject(), questionForm.getContent(), siteUser);
-        	return "redirect:/board/qna";
+        	this.noticeService.create(noticeForm.getSubject(), noticeForm.getContent(), siteUser);
+        	return "redirect:/board/notice";
         }
 
     }
 	
-	
-	// 수정 URL매핑 (GET)
+	// 공지 수정 메서드
     @PreAuthorize("isAuthenticated()") // 로그인 필요
-    @RequestMapping("/qna/modify/{id}")
-    public String questionModify(QuestionForm questionForm,
+    @RequestMapping("/notice/modify/{id}")
+    public String questionModify(NoticeForm noticeForm,
     							 @PathVariable("id") Integer id, 
     							 Principal principal) {
     	
-        Question question = this.questionService.getQuestion(id);
+        Notice notice = this.noticeService.getNotice(id);
         SessionUserDTO userinfo = userService.getSession();
         
-        if(!question.getAuthor().getEmail().equals(userinfo.getEmail())) {
+        if(!notice.getAuthor().getEmail().equals(userinfo.getEmail())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "수정권한이 없습니다.");
         }
         
         // 수정시 questionForm 리턴
-        questionForm.setSubject(question.getSubject());
-        questionForm.setContent(question.getContent());
-        return "bbs/bbsQnaForm";
+        noticeForm.setSubject(notice.getSubject());
+        noticeForm.setContent(notice.getContent());
+        return "bbs/bbsNoticeForm";
     }
     
-    // 수정 URL매핑 (POST)
+    // 수정 메서드 처리
     @PreAuthorize("isAuthenticated()")
-    @PostMapping("/qna/modify/{id}")
-    public String questionModify(@Valid QuestionForm questionForm,
+    @PostMapping("/notice/modify/{id}")
+    public String questionModify(@Valid NoticeForm questionForm,
     							 BindingResult bindingResult, 
     							 Principal principal, 
     							 @PathVariable("id") Integer id) {
         if (bindingResult.hasErrors()) {
-            return "bbs/bbsQnaForm";
+            return "bbs/bbsNoticeForm";
         }
-        Question question = this.questionService.getQuestion(id);
+        Notice notice = this.noticeService.getNotice(id);
         SessionUserDTO userinfo = userService.getSession();
-        if (!question.getAuthor().getEmail().equals(userinfo.getEmail())) {
+        if (!notice.getAuthor().getEmail().equals(userinfo.getEmail())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "수정권한이 없습니다.");
         }
-        this.questionService.modify(question,
+        this.noticeService.modify(notice,
         							questionForm.getSubject(),
         							questionForm.getContent());
-        return String.format("redirect:/board/qna/detail/%s", id);
+        return String.format("redirect:/board/notice/detail/%s", id);
     }
     
-    // 삭제 URL 매핑 (GET)
+    // 공지 삭제 메서드
     @PreAuthorize("isAuthenticated()")
-    @GetMapping("/qna/delete/{id}")
+    @GetMapping("/notice/delete/{id}")
     public String questionDelete(Principal principal,
     							 @PathVariable("id") Integer id) {
-        Question question = this.questionService.getQuestion(id);
+    	Notice notice = this.noticeService.getNotice(id);
         SessionUserDTO userinfo = userService.getSession();
         
         // 사용자 검사
-        if (!question.getAuthor().getEmail().equals(userinfo.getEmail())) {
+        if (!notice.getAuthor().getEmail().equals(userinfo.getEmail())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "삭제권한이 없습니다.");
         }
-        this.questionService.delete(question);
+        this.noticeService.delete(notice);
         return "redirect:/";
     }
 
-    // 추천 URL 매핑 (GET)
+    // 공지 추천 메서드
     @PreAuthorize("isAuthenticated()") // 로그인한 사람만 추천 가능
-    @GetMapping("/qna/vote/{id}")
+    @GetMapping("/notice/vote/{id}")
     public String questionVote(Principal principal, @PathVariable("id") Integer id) {
-        Question question = this.questionService.getQuestion(id);
+    	Notice notice = this.noticeService.getNotice(id);
         SessionUserDTO userinfo = userService.getSession();
         
         SiteUser siteUser = this.userService.getUser(userinfo.getEmail());
         
         // 추천 중복검사
-        if (question.getVoter().contains(siteUser) == true) {
-        	this.questionService.votedel(question, siteUser);
+        if (notice.getVoter().contains(siteUser) == true) {
+        	this.noticeService.votedel(notice, siteUser);
         }
         else {
-        	this.questionService.vote(question, siteUser);
+        	this.noticeService.vote(notice, siteUser);
         }
-        return String.format("redirect:/board/qna/detail/%s", id);
+        return String.format("redirect:/board/notice/detail/%s", id);
     }
-
+    
 }

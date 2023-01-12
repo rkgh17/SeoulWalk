@@ -62,18 +62,18 @@ public class OAuthAttributes {
     
     
     // 닉네임 설정 메서드
-//    public SiteUser toEntity() {
-//    	int idx = email.indexOf("@");
-//    	String nickname = email.substring(0,idx-4) + "****" + email.substring(idx+1, email.length()-4);
-//    	
-//    	return new SiteUser(name, email, nickname);
-//    }
-    
     public SiteUser toEntity() {
-    	return SiteUser.builder()
-    			.name(name)
-    			.email(email)
-    			.build();
+    	int idx = email.indexOf("@");
+    	String nickname = email.substring(0,idx-4) + "****" + email.substring(idx+1, email.length()-4);
+    	
+    	return new SiteUser(name, email, nickname, "ROLE_USER");
     }
+    
+//    public SiteUser toEntity() {
+//    	return SiteUser.builder()
+//    			.name(name)
+//    			.email(email)
+//    			.build();
+//    }
 
 }
