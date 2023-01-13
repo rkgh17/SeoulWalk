@@ -19,12 +19,12 @@ public interface OtherCourseRepository extends JpaRepository<OtherCourse, String
 	
 
 	// 그밖의 길 조회 쿼리
-	@Query(value = "SELECT * FROM SEOUL_TRAILS WHERE "
-			+ "(COURSE_DIVISION LIKE %:addressKindU% AND"
-			+ " COURSE_BOROUGH LIKE %:addressKindD% AND"
-			+ " COURSE_DIFFICULTY LIKE %:difficulty%) "
-			+ "AND (COURSE_DISTANCE BETWEEN :dis1 AND :dis2) "
-			+ "AND (ESTIMATED_DURATION BETWEEN :dur1 AND :dur2) ", nativeQuery = true)
+	@Query(value = "SELECT * FROM seoul_trails WHERE "
+			+ "(course_division LIKE %:addressKindU% AND"
+			+ " course_borough LIKE %:addressKindD% AND"
+			+ " course_difficulty LIKE %:difficulty%) "
+			+ "AND (course_division BETWEEN :dis1 AND :dis2) "
+			+ "AND (estimated_duration BETWEEN :dur1 AND :dur2) ", nativeQuery = true)
 	public List<OtherCourse> search(@Param("addressKindU")String addressKindU, 
 									@Param("addressKindD") String addressKindD,
 									@Param("difficulty") String difficulty,

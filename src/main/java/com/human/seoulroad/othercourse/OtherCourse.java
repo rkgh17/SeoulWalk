@@ -18,7 +18,7 @@ public class OtherCourse {
 	
 	@Id
 	@Column
-	private String sortnum;
+	private int sortnum;
 	
 	@Column
 	private String courseDivision;
@@ -27,10 +27,10 @@ public class OtherCourse {
 	private String courseBorough;
 	
 	@Column
-	private BigDecimal courseDistance;
+	private String courseDistance;
 	
 	@Column
-	private int estimatedDuration;
+	private String estimatedDuration;
 	
 	@Column
 	private String courseDifficulty;

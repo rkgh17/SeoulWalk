@@ -12,27 +12,27 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CourseRepository extends JpaRepository<Course1, BigDecimal>{
 	
-	@Query(value = "SELECT lat, lng FROM COURSE1", nativeQuery = true)
+	@Query(value = "SELECT lat, lng FROM course1", nativeQuery = true)
 	List<String> selectAll1();
 	
-	@Query(value = "SELECT lat, lng FROM COURSE2", nativeQuery = true)
+	@Query(value = "SELECT lat, lng FROM course2", nativeQuery = true)
 	List<String> selectAll2();
 	
-	@Query(value = "SELECT lat, lng FROM COURSE3", nativeQuery = true)
+	@Query(value = "SELECT lat, lng FROM course3", nativeQuery = true)
 	List<String> selectAll3();
 	
-	@Query(value = "SELECT lat, lng FROM COURSE4", nativeQuery = true)
+	@Query(value = "SELECT lat, lng FROM course4", nativeQuery = true)
 	List<String> selectAll4();
 
-	@Query(value = "SELECT lat, lng FROM COURSE5", nativeQuery = true)
+	@Query(value = "SELECT lat, lng FROM course5", nativeQuery = true)
 	List<String> selectAll5();
 	
-	@Query(value = "SELECT lat, lng FROM COURSE6", nativeQuery = true)
+	@Query(value = "SELECT lat, lng FROM course6", nativeQuery = true)
 	List<String> selectAll6();
 	
-	@Query(value = "SELECT lat, lng FROM COURSE7", nativeQuery = true)
+	@Query(value = "SELECT lat, lng FROM course7", nativeQuery = true)
 	List<String> selectAll7();
 	
-	@Query(value = "SELECT lat, lng FROM COURSE8", nativeQuery = true)
+	@Query(value = "SELECT lat, lng FROM course8", nativeQuery = true)
 	List<String> selectAll8();
 }

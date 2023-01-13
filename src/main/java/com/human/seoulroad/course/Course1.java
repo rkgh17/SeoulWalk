@@ -1,7 +1,5 @@
 package com.human.seoulroad.course;
 
-import java.math.BigDecimal;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -16,10 +14,10 @@ public class Course1 {
 	@Id
 	private int sortnum;
 	
-	@Column(precision = 9)
-	private BigDecimal lat;
+	@Column()
+	private String lat;
 	
-	@Column(precision = 9)
-	private BigDecimal lng;
+	@Column()
+	private String lng;
 
 }
