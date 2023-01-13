@@ -190,6 +190,76 @@ th, td {
   color: white;
 }
 
+/* course1.html ~ course8.html */
+.coursetext {
+	text-align: center;
+}
+.coursetextTitle {
+	font-weight:900;
+	font-size:40px;
+
+}
+.coursetextSubText {
+	font-size:20px;
+
+}
+.coursetextSubText2 {
+	font-weight:600;
+	font-size:20px;
+ 
+}
+.coursetextSubText3 {
+   color : dimgrey;
+   font-size:17px;	
+ 
+}
+.coursetextSubText4 {
+	font-weight:100;
+	font-size:16px;	
+ 
+}
+.hrheight{
+	border: 0;
+    height: 20px;
+    background: black
+}
+  .faq-box {
+  background-color:#fff;
+  color:inherit;
+  padding:10px;
+}
+
+.faq-box__question {
+  cursor:pointer;
+}
+
+.faq-box__question::after {
+  content:"▶";
+  float:left;
+}
+
+.faq-box > ul > li {
+  padding:10px;
+}
+
+.faq-box > ul > li.hover > .faq-box__question::after {
+  content:"▲";
+}
+
+.faq-box__answer {
+  display:none;
+  background-color:rgba(0,0,0,0.3);
+  border-radius:10px;
+  padding:10px;
+}
+.faq-box ul li {
+	list-style:none;
+}
+.tourlistspotimg {
+	 border-radius: 5%
+}
+/* course1.html ~ course8.html */
+
 /*임여명*/
 
 /* 메인화면 */
@@ -267,40 +337,3 @@ th, td {
 	margin-bottom: 25px;
 	margin-right: 18px;
 }
-
-/*게시판 영역*/
-.bbscontent{
-	display:flex;
-	width: 100%;
-	border:solid darkgrey 1px;
-}
-
-.bbs-left{
-	flex-basis: 20%;
-	border:solid red 1px;
-	margin:5px;
-	display:flex;
-	flex-flow: column;
-}
-.bbs-left-items{
-	text-decoration: none;
-	font-size:25px;
-	margin-left:10px;
-	margin-top:20px;
-	height:40px;
-}
-.bbs-left-items:active{
-	/*background-color: black;*/
-}
-
-.bbs-right{
-	flex-basis: 80%;
-	border:solid blue 1px;
-	margin:5px;
-}
-
-/* QNA영역 */
-.answer{
-	margin-top:10px;
-}
-

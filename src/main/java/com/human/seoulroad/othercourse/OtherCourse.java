@@ -38,6 +38,7 @@ public class OtherCourse {
 	@Column
 	private String courseName;
 	
-	
+	@Column
+	private String img;
 }
 
