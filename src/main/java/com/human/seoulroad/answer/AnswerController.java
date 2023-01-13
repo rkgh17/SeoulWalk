@@ -43,7 +43,7 @@ public class AnswerController {
         // 글쓴이 속성
         //SiteUser siteUser = this.userService.getUser(principal.getName());
     	SessionUserDTO userinfo = userService.getSession();
-    	SiteUser siteUser = this.userService.getUser(userinfo.getName());
+    	SiteUser siteUser = this.userService.getUser(userinfo.getEmail());
     	
     	// 검증 실패시 다시 리턴
         if (bindingResult.hasErrors()) {
