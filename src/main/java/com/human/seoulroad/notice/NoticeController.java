@@ -144,18 +144,26 @@ public class NoticeController {
     @GetMapping("/notice/vote/{id}")
     public String questionVote(Principal principal, @PathVariable("id") Integer id) {
     	Notice notice = this.noticeService.getNotice(id);
-        SessionUserDTO userinfo = userService.getSession();
         
-        SiteUser siteUser = this.userService.getUser(userinfo.getEmail());
+        // 로그인 하지 않을 시 추천 x
+        if(userService.getSession() == null) {
+        	return "login";
+        }
         
-        // 추천 중복검사
-        if (notice.getVoter().contains(siteUser) == true) {
-        	this.noticeService.votedel(notice, siteUser);
+        else { // 로그인시 수행되는 메서드
+        	SiteUser siteUser = this.userService.getUser(userService.getSession().getEmail());
+        
+	        // 추천 중복검사
+	        if (notice.getVoter().contains(siteUser) == true) {
+	        	this.noticeService.votedel(notice, siteUser);
+	        }
+	        else {
+	        	this.noticeService.vote(notice, siteUser);
+	        }
+	        return String.format("redirect:/board/notice/detail/%s", id);
         }
-        else {
-        	this.noticeService.vote(notice, siteUser);
-        }
-        return String.format("redirect:/board/notice/detail/%s", id);
+        
+        
     }
     
 }

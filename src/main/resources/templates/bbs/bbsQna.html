@@ -3,7 +3,7 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/bbs.css}">
 </head>
 <div layout:fragment="content" class="container my-5">
-<h1 style="padding-top:15px; padding-bottom:15px;">소통 게시판</h1>
+<h1 style="padding-top:15px; padding-bottom:15px; padding-left:30px;">소통 게시판</h1>
 <hr>
 
 <div class="bbscontent">
@@ -59,12 +59,12 @@
 	
 	
 	<!-- 질문등록과 검색, 페이징 -->
-	<div>
+	<div style="margin-top:30px;">
 	
     <div class="row my-3">
     
     	<!-- 질문 등록 버튼 -->
-        <div class="col-6" style-"padding-left:10px;">
+        <div class="col-6">
             <a th:href="@{qna/create}" class="btn btn-success">질문 등록</a>
         </div>
         
@@ -79,7 +79,7 @@
         </div>
         
         <!-- 페이징 처리 시작 -->
-	    <div th:if="${!paging.isEmpty()}" style="padding-top:15px;">
+	    <div th:if="${!paging.isEmpty()}" style="padding-top:30px;">
 	        <ul class="pagination justify-content-center">
 	        
 	        	<!-- '이전'링크 -->

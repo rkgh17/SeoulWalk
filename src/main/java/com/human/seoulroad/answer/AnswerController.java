@@ -67,20 +67,30 @@ public class AnswerController {
     @GetMapping("/vote/{id}")
     public String answerVote(Principal principal, @PathVariable("id") Integer id) {
         Answer answer = this.answerService.getAnswer(id);
-        SessionUserDTO userinfo = userService.getSession();
-        SiteUser siteUser = this.userService.getUser(userinfo.getEmail());
         
-        if(answer.getVoter().contains(siteUser) == true) {
-        	this.answerService.votedel(answer, siteUser);
+        // 로그인 하지 않을 시 추천 x
+        if(userService.getSession() == null) {
+        	return "login";
+        }                
+
+        else { // 로그인시 수행되는 메서드
+        	
+            SessionUserDTO userinfo = userService.getSession();
+            SiteUser siteUser = this.userService.getUser(userinfo.getEmail());
+            
+            if(answer.getVoter().contains(siteUser) == true) {
+            	this.answerService.votedel(answer, siteUser);
+            }
+            else {
+            	this.answerService.vote(answer, siteUser);
+            }
+            
+            // 답변 추천 후 앵커로 돌아감
+            return String.format("redirect:/board/qna/detail/%s#answer_%s", 
+            		answer.getQuestion().getId(), 
+            		answer.getId());        	
+        	
         }
-        else {
-        	this.answerService.vote(answer, siteUser);
-        }
-        
-        // 답변 추천 후 앵커로 돌아감
-        return String.format("redirect:/board/qna/detail/%s#answer_%s", 
-        		answer.getQuestion().getId(), 
-        		answer.getId());
     }
     
     

@@ -16,7 +16,6 @@ public interface OtherCourseRepository extends JpaRepository<OtherCourse, String
 	// JPA 기본 메서드 (참고 : https://frogand.tistory.com/22)
 	// 따라서 쿼리문을 짜주지 않아도 findAll이란 예약어를 통해 모든 데이터를 찾아서 보내줌
 	List<OtherCourse> findAll();
-	
 
 	// 그밖의 길 조회 쿼리
 	@Query(value = "SELECT * FROM seoul_trails WHERE "

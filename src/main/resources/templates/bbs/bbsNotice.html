@@ -3,7 +3,7 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/bbs.css}">
 </head>
 <div layout:fragment="content" class="container my-5">
-<h1 style="padding-top:15px; padding-bottom:15px;">공지사항</h1>
+<h1 style="padding-top:15px; padding-bottom:15px; padding-left:30px;">공지사항</h1>
 <hr>
 
 <div class="bbscontent">
@@ -52,9 +52,9 @@
 		</div>
 		
 		<!-- 공지등록버튼과 검색 -->
-		<div>
+		<div style="margin-top:30px;">
 			<div class="row my-3">
-					<div class="col-6" style-"padding-left:10px;">
+					<div class="col-6">
 						<a  th:href="@{notice/create}" 
 							class="btn btn-success" 
 							sec:authorize="isAuthenticated()"
@@ -74,7 +74,7 @@
 			
 		        
 		        <!-- 페이징 처리 시작 -->
-		        <div th:if="${!paging.isEmpty()}" style="padding-top:15px;">
+		        <div th:if="${!paging.isEmpty()}" style="padding-top:30px;">
 			        <ul class="pagination justify-content-center">
 			        
 			        	<!-- '이전'링크 -->
