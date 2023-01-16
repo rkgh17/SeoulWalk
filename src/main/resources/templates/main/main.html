@@ -1,0 +1,33 @@
+<html layout:decorate="~{layout}">
+<body>
+
+<div layout:fragment="content">
+
+<div style="display:flex; justify-content:space-between; flex-wrap:wrap;">
+
+<!-- 소개영역 -->
+<div style=" display:flex; flex-direction:column; justify-content:space-around;">
+	<div style="padding-bottom:80px; padding-left:30px; padding-top:50px;">
+		<div style="font-weight:bold;font-size:45px;">Walk With Seoul</div>
+		
+		<div style="display:flex; justify-content:center; padding-top:120px; padding-right:150px;">
+			<button style="border:0; border-radius:12px;
+						   font-size:23px;
+						   width: 200px; height:50px;
+						   color:white; background-color:#1ABC9C">둘레길이란?</button>
+		</div>
+	</div>
+</div>
+
+<!-- 그림영역 -->
+<div>
+<img th:src="@{/img/main/main.png}" />
+</div>
+	
+
+<div>
+
+</div>
+
+</body>
+</html>
