@@ -11,7 +11,10 @@ public class MainController {
 	public String root() {
 		return "redirect:/home";
 	}
-	
+	@RequestMapping("/AAA")
+	public String AAA() {
+		return "AAA";
+	}
 	@RequestMapping("/home")
 	public String home() {
 		return "home";
@@ -22,4 +25,5 @@ public class MainController {
 		return "introduce";
 	}
 
+	
 }
