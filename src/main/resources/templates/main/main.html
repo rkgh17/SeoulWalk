@@ -3,30 +3,31 @@
 
 <div layout:fragment="content">
 
-<div style="display:flex; justify-content:space-between; flex-wrap:wrap;">
+<div style="display:flex; justify-content:space-between; flex-wrap:wrap; padding-top:130px;">
 
 <!-- 소개영역 -->
-<div style=" display:flex; flex-direction:column; justify-content:space-around;">
-	<div style="padding-bottom:80px; padding-left:30px; padding-top:50px;">
-		<div style="font-weight:bold;font-size:45px; padding-bottom:150px;">Walk With Seoul</div>
-		
-		<div style="display:flex; justify-content:center; padding-right:150px;">
-			<button style="border:0; border-radius:12px;
-						   font-size:23px;
-						   width: 200px; height:50px;
-						   color:white; background-color:#1ABC9C">둘레길이란?</button>
+	<div style=" display:flex; flex-direction:column; justify-content:space-around;">
+		<div style="padding-bottom:180px; padding-left:100px; padding-top:50px;">
+			<div style="font-weight:bold;font-size:45px; padding-bottom:150px;">Walk With Seoul</div>
+			
+			<div style="display:flex; justify-content:center; padding-right:150px;">
+				<button style="border:0; border-radius:12px;
+							   font-size:23px;
+							   width: 200px; height:50px;
+							   color:white; background-color:#1ABC9C"
+						onClick="location.href='introduce'">둘레길이란?</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- 그림영역 -->
+	<div style="display: flex; justify-content: end;">
+		<div>
+			<img th:src="@{/img/main/main.png}"/>
 		</div>
 	</div>
 </div>
-
-<!-- 그림영역 -->
-<div>
-<img th:src="@{/img/main/main.png}" />
-</div>
 	
-
-<div>
-
 </div>
 
 </body>
