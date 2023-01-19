@@ -1,4 +1,4 @@
-<html layout:decorate="~{layout}">
+	<html layout:decorate="~{layout}">
 <div layout:fragment="content" class="container my-5">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
@@ -17,7 +17,11 @@
 .swiper-slide img {
 	box-shadow:0 0 5px #555;
 	max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
+
 	/* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
+
+}
+
 </style>
 <div class="rcm-area">
 	<h1 style="padding-top:15px; padding-bottom:15px;">맛집 코스</h1>
@@ -38,40 +42,44 @@
 			<div class="rcm-boxalign">
 				<div class="rcm-content02">
 					<div class="rcm-textTitle">
-						경의선 숲길
+						망리단길
 					</div>
 				</div><br>
 					<div class="rcm-content03">
 						<div class="SceneryImg">
-							<img th:src="@{/img/rcmcourse/경의선숲길.jpg}" />
+							<img th:src="@{/img/rcmcourse/rcmRes/망리단길1.jpg}" />
+						</div>
+						<span>◾ 내용</span>
+						<div>
+						<a href="javascript:getShow()" style="text-decoration: none; color: black; " onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 코스경로 자세히</a>
+							<div id="hide1" style="display: none">
+						 ㆍ망원역 2번 출구- 망리단길 구간 - 합정동 구간-합정역 8번 출구
+						 	<div>
+							◾ 길이 : 2km 
 						</div>
 						<div>
-							기존 경의선 부지를 활용해 만든 경의선 숲길은 뉴욕의 센트럴파크를 벤치마킹하여 연트럴파크라는 별칭으로도 불린다. 현재 경의선 숲길은 인근 주민들의 휴식 공간으로 활용되고 있지만, 독특한 분위기와 주변의 멋진 카페 덕분에 데이트 코스로도 유명하다. 저녁이면 홍대로 이동해 공연을 즐길 수도 있어 연인과 오랫동안 함께 하고 싶은 사람들의 약속 장소로도 추천.
-						</div>
-						<div>
-							◾ 코스경로 : 공덕역 1번 출구-염리동ㆍ대흥동 구간-신수동 구간-와우교 구간-연남동 구간-가좌역 1번 출구
-						</div>
-						<div>
-							◾ 길이 : 5km 
-						</div>
-						<div>
-							◾ 소요시간 : 2시간
+							◾ 소요시간 : 1시간
 						</div>
 						<div>
 							◾ 난이도 : 초급
 						</div>
+						</div>
+						</div>
+						
+						<a href="https://www.mangoplate.com/top_lists/3091_manglidangil" style="text-decoration:none; color: black; font-weight: bold
+						;" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 망리단길 맛집 추천</a>
 						
 							<div class="swiper-container">
 								<div class="swiper-wrapper">
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길2.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길3.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길4.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길5.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길6.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길7.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길8.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길9.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길10.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/망리단길8.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/망리단길9.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/망리단길10.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/망리단길2.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/망리단길3.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/망리단길4.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/망리단길5.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/망리단길6.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/망리단길7.jpg}" /></div>
 								</div>
 								<!-- 네비게이션 -->
 								<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
@@ -86,40 +94,51 @@
 				<div class="rcm-boxalign">
 				<div class="rcm-content02">
 					<div class="rcm-textTitle">
-						경의선 숲길
+						북한산 둘레길
 					</div>
 				</div><br>
 					<div class="rcm-content03">
 						<div class="SceneryImg">
-							<img th:src="@{/img/rcmcourse/경의선숲길.jpg}" />
+							<img th:src="@{/img/rcmcourse/rcmRes/북한산.jpg}" />
+						</div>
+						<a href="javascript:GetShow()"style="text-decoration: none; color: black;" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 설명보기</a>
+							<div id="hide" style="display: none">
+								서울특별시 북부와 경기도 고양시의 경계에 있으며 백두산, 지리산, 금강산, 묘향산과 함께 대한민국 오악에 포함되는 명산인 북한산은 서울 근교의 산중에서 가장 높고, 산세가 웅장하여 예로부터 서울의 진산으로 불렸다.
+								서울둘레길 8코스는 이러한 북한산을 통과하는 코스로 이루어져있어, 북한산과 밀접해있는 맛집을 소개한다.
+								북한산의 경치를 즐기고 난후 맛집을 찾는 사람에게 추천
+							</div>
+						
+						
+						<div>
+							<a href=#none id="show" style="text-decoration: none; color: black;" onclick="if(hide3.style.display=='none') {hide3.style.display='';show.innerText='◾ 코스경로 감추기'} else {hide3.style.display='none';show.innerText='◾ 코스경로 자세히'}" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 코스경로 자세히</a>
+							<div id="hide3" style="display: none">
+							ㆍ구파발역 1번 출구-상림마을 구간-창릉천ㆍ효자동 구간-효자동ㆍ북한천 구간<br>-북한산 연주대 구간-연주대ㆍ우이동-북한산우이역 2번 출구
+							<div>
+							◾ 길이 : 11km 
 						</div>
 						<div>
-							기존 경의선 부지를 활용해 만든 경의선 숲길은 뉴욕의 센트럴파크를 벤치마킹하여 연트럴파크라는 별칭으로도 불린다. 현재 경의선 숲길은 인근 주민들의 휴식 공간으로 활용되고 있지만, 독특한 분위기와 주변의 멋진 카페 덕분에 데이트 코스로도 유명하다. 저녁이면 홍대로 이동해 공연을 즐길 수도 있어 연인과 오랫동안 함께 하고 싶은 사람들의 약속 장소로도 추천.
+							◾ 소요시간 : 4시간 30분
 						</div>
 						<div>
-							◾ 코스경로 : 공덕역 1번 출구-염리동ㆍ대흥동 구간-신수동 구간-와우교 구간-연남동 구간-가좌역 1번 출구
+							◾ 난이도 : 고급
 						</div>
-						<div>
-							◾ 길이 : 5km 
+						
+							</div>
 						</div>
-						<div>
-							◾ 소요시간 : 2시간
-						</div>
-						<div>
-							◾ 난이도 : 초급
-						</div>
+						<a href="https://www.mangoplate.com/top_lists/1865_bukhansan" style="text-decoration:none; color: black; font-weight: bold
+						;" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 북한산 둘레길 맛집 추천</a>
 						
 							<div class="swiper-container">
 								<div class="swiper-wrapper">
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길2.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길3.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길4.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길5.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길6.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길7.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길8.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길9.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길10.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/북한산2.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/북한산3.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/북한산1.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/북한산5.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/북한산7.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/북한산9.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/북한산8.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/북한산4.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmRes/북한산6.jpg}" /></div>
 								</div>
 								<!-- 네비게이션 -->
 								<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
@@ -161,6 +180,33 @@ new Swiper('.swiper-container', {
 		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
 	},
 });
+	
+	function GetShow(){	 //
+		var con = document.getElementById("hide");
+		if(con.style.display == "none"){
+			con.style.display = "block"; 
+		}
+		else{
+			con.style.display = "none"
+		}
+	}
+	
+	function getShow(){	 //
+		var con = document.getElementById("hide1");
+		if(con.style.display == "none"){
+			con.style.display = "block"; 
+		}
+		else{
+			con.style.display = "none"
+		}
+	}
+	
+
+
+		
+	
+
+
 </script>
 </div>
 </html>

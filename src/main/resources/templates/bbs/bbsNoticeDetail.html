@@ -53,7 +53,7 @@
 			<td th:text="${#lists.size(notice.voter)}"></td>
 		</tr>
 		<tr>
-			<td colspan="6" th:text="${notice.content}"></td>
+			<td colspan="6" th:utext="${notice.content}"></td>
 		</tr>
 	</tbody>
     </table>

@@ -150,22 +150,27 @@ public class QuestionController {
     }
 
     // 추천 URL 매핑 (GET)
-    @PreAuthorize("isAuthenticated()") // 로그인한 사람만 추천 가능
     @GetMapping("/qna/vote/{id}")
     public String questionVote(Principal principal, @PathVariable("id") Integer id) {
         Question question = this.questionService.getQuestion(id);
-        SessionUserDTO userinfo = userService.getSession();
         
-        SiteUser siteUser = this.userService.getUser(userinfo.getEmail());
-        
-        // 추천 중복검사
-        if (question.getVoter().contains(siteUser) == true) {
-        	this.questionService.votedel(question, siteUser);
+        // 로그인 하지 않을 시 추천 x
+        if(userService.getSession() == null) {
+        	return "login";
+        }        
+        else { // 로그인시 수행되는 메서드
+	        
+	        SiteUser siteUser = this.userService.getUser(userService.getSession().getEmail());
+	        
+	        // 추천 중복검사
+	        if (question.getVoter().contains(siteUser) == true) {
+	        	this.questionService.votedel(question, siteUser);
+	        }
+	        else {
+	        	this.questionService.vote(question, siteUser);
+	        }
+	        return String.format("redirect:/board/qna/detail/%s", id);
         }
-        else {
-        	this.questionService.vote(question, siteUser);
-        }
-        return String.format("redirect:/board/qna/detail/%s", id);
     }
 
 }

@@ -9,12 +9,15 @@ public class MainController {
 	
 	@GetMapping("/")
 	public String root() {
-		return "redirect:/home";
+		return "redirect:/main";
 	}
-	
-	@RequestMapping("/home")
+	@RequestMapping("/AAA")
+	public String AAA() {
+		return "AAA";
+	}
+	@RequestMapping("/main")
 	public String home() {
-		return "home";
+		return "main/main";
 	}
 	
 	@RequestMapping("/introduce")
