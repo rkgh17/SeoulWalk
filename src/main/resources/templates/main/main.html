@@ -3,11 +3,11 @@
 
 <div layout:fragment="content">
 
-<div style="display:flex; justify-content:space-between; flex-wrap:wrap; padding-top:140px;">
+<div style="display:flex; justify-content:space-between; flex-wrap:wrap; padding-top:130px;">
 
 <!-- 소개영역 -->
 	<div style=" display:flex; flex-direction:column; justify-content:space-around;">
-		<div style="padding-bottom:180px; padding-left:100px; padding-top:70px;">
+		<div style="padding-bottom:180px; padding-left:80px; padding-top:70px;">
 			<div style="font-weight:bold;font-size:45px; padding-bottom:120px;">Walk With Seoul</div>
 			
 			<div style="display:flex; justify-content:center; padding-right:150px;">
@@ -19,7 +19,7 @@
 						onClick="location.href='introduce'">서울 둘레길이란?</button>
 			</div>
 			
-			<div style="display:flex; justify-content:center; padding-right:150px; padding-top:10px;">
+			<div style="display:flex; justify-content:center; padding-right:150px; padding-top:15px;">
 				<button style="border:0; border-radius:12px;
 							   font-weight:bold;
 							   font-size:28px;
@@ -34,7 +34,7 @@
 	<!-- 그림영역 -->
 	<div style="display: flex; justify-content: end;">
 		<div>
-			<img th:src="@{/img/main/main.png}"/>
+			<img style="max-width:100%; height:auto;" th:src="@{/img/main/main.png}"/>
 		</div>
 	</div>
 </div>
