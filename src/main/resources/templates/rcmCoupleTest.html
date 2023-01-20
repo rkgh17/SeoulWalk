@@ -1,0 +1,26 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-5">
+			
+			<div class="container my-3">
+		 	<table class="table" style="border-left: none; border-right: none;">
+		    <thead class="table-success">
+		        <tr>
+		            <th>평점</th>
+		            <th>닉네임</th>
+		            <th>내용</th>
+		            <th>작성일자</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <tr th:each="review, loop : ${reviewList}">
+		            <td th:text="${review.reviewStar}"></td>
+		            <td th:text="${review.id}"></td>
+		            <td th:text="${review.reviewContents}"></td>
+		            <td th:text="${#temporals.format(review.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+		        </tr>
+		    </tbody>
+			</table>
+	
+				
+</div>
+</html>
