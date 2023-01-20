@@ -13,16 +13,18 @@
 
 <div style="display:flex;
 			justify-content:space-between;
-			padding:5px;">
+			padding:5px;
+			position:fixed;
+			top:0;left:0;right:0; height:75px; background-color:white;">
 			
-	<div style="padding: 10px;">
+	<div>
 		<span>
 			<a style="color:#1ABC9C;" href="/"><img th:src="@{/img/main/SWlogo2.png}"></a>
 			<a class="hometext" href="/">Seoul Walk</a>
 		</span>
 	</div>
 	
-	<div style="padding:6px; padding-right: 10px;">
+	<div style="padding-right: 5px;">
 		
 	
 	<div class="dropdown">
@@ -44,7 +46,7 @@
 </div>
 
 
-<th:block layout:fragment="content"></th:block>
+<th:block style="padding-top:140px;" layout:fragment="content"></th:block>
 
 
 </body>

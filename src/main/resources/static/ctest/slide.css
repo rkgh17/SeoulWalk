@@ -70,5 +70,16 @@
 	font-size:20px;
 	width: 290px; height:50px;
 	color:white; background-color:#1ABC9C;
-	margin-top:150px;
+	margin-top:50px;
+}
+.q{
+	margin:20px;
+	font-size: 29px;
+	font-weight: bold;
+}
+.qt{
+	margin:20px;
+	margin-bottom:50px; 
+	font-size:20px;
+	font-weight:bold; 
 }
