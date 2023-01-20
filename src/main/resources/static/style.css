@@ -65,6 +65,7 @@ p{
   display: none;
 }
 
+
 .qna label { /* 제목 - 클릭 영역 */
   font-weight: bold;
   color: #000;
@@ -335,6 +336,7 @@ th, td {
 	width: 675px;
 	
 }
+
  .rcm-area02 {
     box-sizing: border-box;   
      		display: flex;
