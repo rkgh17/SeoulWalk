@@ -5,13 +5,17 @@
 	
 <body>
 <div layout:fragment="content">
-<form method="get" action="test-form">
+
+<form method="post" action="test-form">
+<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 <div class="slide slide_wrap" style="padding-top:100px;">
 	
 	<div class="slide_item">
 		
-			<div style="border: solid 1px darkgray;margin:30px; width: 300px; height: 200px;">
-				사진영역
+			<div style="margin:30px; width: 300px; height: 200px; overflow:hidden; text-align:center; display:inline-table;">
+				<div style = "display: table-cell; vertical-align:middle;">
+					<img style="max-width:300px; max-height:200px;"  th:src="@{/img/3873470.jpg}">
+				</div>
 			</div>
 		
 			<div style="margin:30px;
@@ -33,11 +37,11 @@
 			<div class = "count">1/10</div>
 		</div>
 	
-		<div style="margin:30px;
+		<div style="margin:20px;
 						font-size: 29px;
 						font-weight: bold;">
-				질문1</div>
-		<input class = "slide_next_button" type="radio" id="q11" name = "q1" value="1"><label for="q11">답1</label>
+				Q1</div>
+		<input class = "slide_next_button" type="radio" id="q11" name = "q1" value="T"><label for="q11">답1</label>
 		<input class = "slide_next_button" type="radio" id="q12" name = "q1" value="2"><label for="q12">답2</label>
 
 
@@ -48,10 +52,10 @@
 			<button class="slide_prev_button" type="button">&lt</button>
 			<div class = "count">2/10</div>
 		</div>
-		<div style="margin:30px;
+		<div style="margin:20px;
 						font-size: 29px;
 						font-weight: bold;">
-				질문2</div>
+				Q2</div>
 		<input class = "slide_next_button" type="radio" id="q21" name = "q2" value="3"><label for="q21">답1</label>
 		<input class = "slide_next_button" type="radio" id="q22" name = "q2" value="4"><label for="q22">답2</label>
 	</div>
@@ -61,10 +65,10 @@
 			<button class="slide_prev_button" type="button">&lt</button>
 			<div class = "count">3/10</div>
 		</div>
-		<div style="margin:30px;
+		<div style="margin:20px;
 						font-size: 29px;
 						font-weight: bold;">
-				질문3</div>
+				Q3</div>
 		<input class = "slide_next_button" type="radio" id="q31" name = "q3" value="5"><label for="q31">답1</label>
 		<input class = "slide_next_button" type="radio" id="q32" name = "q3" value="6"><label for="q32">답2</label>
 	</div>
