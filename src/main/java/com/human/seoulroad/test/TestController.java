@@ -19,17 +19,19 @@ public class TestController {
 		return "test/teststart";
 	}
 	
-	@GetMapping("/test-form")
+	@PostMapping("/test-form")
 	public String tr(Model model,
 					 @RequestParam String q1,
 					 @RequestParam String q2,
 					 @RequestParam String q3){
+
+		if(q1.equals("T")) {
+			model.addAttribute("q1","1번에 첫문항");
+		}else {
+			model.addAttribute("q1","1번에 두번째 문항");
+		}
 		
-		System.out.println(q1);
-		System.out.println(q2);
-		System.out.println(q3);
 		
-		model.addAttribute("q1", q1);
 		model.addAttribute("q2", q2);
 		model.addAttribute("q3", q3);
 		

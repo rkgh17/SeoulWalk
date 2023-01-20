@@ -269,8 +269,8 @@ th, td {
 .hometext{
 	text-decoration : none;
 	font-weight:bold;
-	font-size : 30px;
-	padding-left: 20px;
+	font-size : 28px;
+	padding-left: 12px;
 	color : #7D7D7D;
 }
 .hometext:hover{
@@ -301,6 +301,8 @@ th, td {
 	display:flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	margin-top:100px;
+	
 }
 /*추가(임여명)*/
 /*커플코스*/
