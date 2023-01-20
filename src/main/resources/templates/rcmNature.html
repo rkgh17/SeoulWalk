@@ -4,8 +4,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 <style>
 .swiper-container {
-	width: 675px;
-	height:200px;
+	width: 710px;
+	height:390px;;
 
 }
 .swiper-slide {
@@ -17,7 +17,11 @@
 .swiper-slide img {
 	box-shadow:0 0 5px #555;
 	max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
+
+	/* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
+
 }
+
 </style>
 <div class="rcm-area">
 	<h1 style="padding-top:15px; padding-bottom:15px;">자연 코스</h1>
@@ -38,40 +42,20 @@
 			<div class="rcm-boxalign">
 				<div class="rcm-content02">
 					<div class="rcm-textTitle">
-						경의선 숲길
+						태릉·강릉
 					</div>
 				</div><br>
 					<div class="rcm-content03">
 						<div class="SceneryImg">
-							<img th:src="@{/img/rcmcourse/경의선숲길.jpg}" />
-						</div>
-						<div>
-							기존 경의선 부지를 활용해 만든 경의선 숲길은 뉴욕의 센트럴파크를 벤치마킹하여 연트럴파크라는 별칭으로도 불린다. 현재 경의선 숲길은 인근 주민들의 휴식 공간으로 활용되고 있지만, 독특한 분위기와 주변의 멋진 카페 덕분에 데이트 코스로도 유명하다. 저녁이면 홍대로 이동해 공연을 즐길 수도 있어 연인과 오랫동안 함께 하고 싶은 사람들의 약속 장소로도 추천.
-						</div>
-						<div>
-							◾ 코스경로 : 공덕역 1번 출구-염리동ㆍ대흥동 구간-신수동 구간-와우교 구간-연남동 구간-가좌역 1번 출구
-						</div>
-						<div>
-							◾ 길이 : 5km 
-						</div>
-						<div>
-							◾ 소요시간 : 2시간
-						</div>
-						<div>
-							◾ 난이도 : 초급
-						</div>
-						
 							<div class="swiper-container">
 								<div class="swiper-wrapper">
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길2.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길3.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길4.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길5.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길6.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길7.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길8.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길9.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길10.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/태릉1.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/태릉7.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/태릉5.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/태릉6.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/태릉4.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/태릉8.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/태릉10.jpg}" /></div>
 								</div>
 								<!-- 네비게이션 -->
 								<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
@@ -79,47 +63,54 @@
 								<!-- 페이징 -->
 								<div class="swiper-pagination"></div>
 							</div>
+						</div>
+						<a href="javascript:GetShow()"style="text-decoration: none; color: black;" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 설명보기</a>
+						<div id="hide" style="display: none">
+								태릉은 조선 제 11대왕인 중종 제2의 계비 문정왕후 윤씨의 능으로써 단릉이라고는 믿기 힘든 웅장한 느낌을 준다. 
+							강릉은 조선 제 13대왕인 명종과 인순왕후 심씨의 능으로 같은 언덕에 왕과 왕비의 봉분을 나란히 조성한 쌍릉의 형식이다. 
+							태릉·강릉 은 2009년 세계문화유산으로 지정될 만큼 역사적 가치를 가진 장소로 평가받는다. 
+							특히 봄과 가을에 가는것을 추천하는데, 그 이유는 봄과 가을 두계절에만 태릉과 강릉을 오가는 숲길을 개방하기 때문이다. <br>
+							역사 구경도하며, 조용한 숲길을 걷고싶은 사람에게 추천
+						</div><br>
 							
-					</div>
+							<a href="javascript:getShow()" style="text-decoration: none; color: black; " onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 코스경로 자세히</a>
+							<div id="hide1" style="display: none">
+							◾ 코스경로 : 화랑대역 4번 출구- 매표소 · 조선왕릉전시관 구간 - 태릉 · 강릉 숲 구간 - 강릉
+						
+					
+						<div>
+							◾ 길이 : 6km 
+						</div>
+						<div>
+							◾ 소요시간 : 2시간 40분	
+						</div>
+						<div>
+							◾ 난이도 : 중급
+						</div>
+						
+							
+					
 				</div><hr><br>
+				
 				
 				<div class="rcm-boxalign">
 				<div class="rcm-content02">
 					<div class="rcm-textTitle">
-						경의선 숲길
+						관악산
 					</div>
 				</div><br>
 					<div class="rcm-content03">
 						<div class="SceneryImg">
-							<img th:src="@{/img/rcmcourse/경의선숲길.jpg}" />
-						</div>
-						<div>
-							기존 경의선 부지를 활용해 만든 경의선 숲길은 뉴욕의 센트럴파크를 벤치마킹하여 연트럴파크라는 별칭으로도 불린다. 현재 경의선 숲길은 인근 주민들의 휴식 공간으로 활용되고 있지만, 독특한 분위기와 주변의 멋진 카페 덕분에 데이트 코스로도 유명하다. 저녁이면 홍대로 이동해 공연을 즐길 수도 있어 연인과 오랫동안 함께 하고 싶은 사람들의 약속 장소로도 추천.
-						</div>
-						<div>
-							◾ 코스경로 : 공덕역 1번 출구-염리동ㆍ대흥동 구간-신수동 구간-와우교 구간-연남동 구간-가좌역 1번 출구
-						</div>
-						<div>
-							◾ 길이 : 5km 
-						</div>
-						<div>
-							◾ 소요시간 : 2시간
-						</div>
-						<div>
-							◾ 난이도 : 초급
-						</div>
-						
 							<div class="swiper-container">
 								<div class="swiper-wrapper">
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길2.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길3.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길4.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길5.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길6.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길7.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길8.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길9.jpg}" /></div>
-									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/경의선숲길10.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/관악산1.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/관악산3.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/관악산4.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/관악산6.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/관악산7.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/관악산8.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/관악산9.jpg}" /></div>
+									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmNature/관악산10.jpg}" /></div>
 								</div>
 								<!-- 네비게이션 -->
 								<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
@@ -127,6 +118,31 @@
 								<!-- 페이징 -->
 								<div class="swiper-pagination"></div>
 							</div>
+						</div>
+						<a href="javascript:Getshow()"style="text-decoration: none; color: black;" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 설명보기</a>
+						<div id="hide2" style="display: none">
+								개성의 송악산, 파주의 감악산, 포천의 운악산, 가평의 화악산과 더불어 경기 5악에 속했던 산으로 주봉은 연주대이고, 산정의 영주대는 
+							세조가 기우제를 지내던 곳이다. 산세가 험한편이나 규모가 그리 크지않고 도심지에서 가까워 매년 많은 등산객이 찾는 산으로, 
+							단풍이 드는 가을에 장관을 자랑한다.
+							매년 봄에는 철쭉제가 열려고, 관악산 등산로 바로 옆에는 시원한 계곡이 흘러 등산할때 시원한 느낌도 들게해준다.
+							사계절중 어느 계절에 가더라도 멋진 장관을 연출해주어 인기가 많다.
+							시끄러운 도심지를 벗어나 산을 가고싶은 사람에게 추천. 
+						</div><br>
+						<a href="javascript:getshow()" style="text-decoration: none; color: black; " onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 코스경로 자세히</a>
+							<div id="hide3" style="display: none">
+							◾ 코스경로 : 석수역 1번 출구-삼성산 산림욕장-관악산 연주대 -와우교 구간-서울대 입구-관악산역 1번 출구
+						
+						<div>
+							◾ 길이 : 14km 
+						</div>
+						<div>
+							◾ 소요시간 : 5시간
+						</div>
+						<div>
+							◾ 난이도 : 고급
+						</div>
+						
+							
 						
 					</div>
 				</div><hr><br>
@@ -142,9 +158,9 @@
 <script>
 new Swiper('.swiper-container', {
 
-	slidesPerView : 3, // 동시에 보여줄 슬라이드 갯수
-	spaceBetween : 30, // 슬라이드간 간격
-	slidesPerGroup : 3, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
+	slidesPerView : 1, // 동시에 보여줄 슬라이드 갯수
+	spaceBetween : 0, // 슬라이드간 간격
+	slidesPerGroup : 1, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
 
 	// 그룹수가 맞지 않을 경우 빈칸으로 메우기
 	// 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
@@ -161,6 +177,47 @@ new Swiper('.swiper-container', {
 		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
 	},
 });
+
+	function GetShow(){	 //
+		var con = document.getElementById("hide");
+		if(con.style.display == "none"){
+			con.style.display = "block"; 
+		}
+		else{
+			con.style.display = "none"
+		}
+	}
+	
+	function getShow(){	 //
+		var con = document.getElementById("hide1");
+		if(con.style.display == "none"){
+			con.style.display = "block"; 
+		}
+		else{
+			con.style.display = "none"
+		}
+	}
+	
+function Getshow(){	 //
+		var con = document.getElementById("hide2");
+		if(con.style.display == "none"){
+			con.style.display = "block"; 
+		}
+		else{
+			con.style.display = "none"
+		}
+	}
+	
+	function getshow(){	 //
+		var con = document.getElementById("hide3");
+		if(con.style.display == "none"){
+			con.style.display = "block"; 
+		}
+		else{
+			con.style.display = "none"
+		}
+	}
+	
 </script>
 </div>
 </html>

@@ -1,0 +1,85 @@
+<html layout:decorate="~{layout}">
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/ctest/slide.css}">
+</head>
+	
+<body>
+<div layout:fragment="content">
+<form method="get" action="test-form">
+<div class="slide slide_wrap" style="padding-top:100px;">
+	
+	<div class="slide_item">
+		
+			<div style="border: solid 1px darkgray;margin:30px; width: 300px; height: 200px;">
+				사진영역
+			</div>
+		
+			<div style="margin:30px;
+						font-size: 29px;
+						font-weight: bold;">
+				나만의 둘레길 유형 테스트
+			</div>
+			
+			<div style="margin:30px;">
+				<button class="slide_next_button" type="button">테스트 시작하기</button>
+			</div>
+			
+	</div>
+
+
+	<div class="slide_item">
+		<div class = "prev">
+			<div class="slide_prev_button" style="visibility : hidden;">&lt</div>
+			<div class = "count">1/10</div>
+		</div>
+	
+		<div style="margin:30px;
+						font-size: 29px;
+						font-weight: bold;">
+				질문1</div>
+		<input class = "slide_next_button" type="radio" id="q11" name = "q1" value="1"><label for="q11">답1</label>
+		<input class = "slide_next_button" type="radio" id="q12" name = "q1" value="2"><label for="q12">답2</label>
+
+
+	</div>
+	
+	<div class="slide_item">
+		<div class = "prev">
+			<button class="slide_prev_button" type="button">&lt</button>
+			<div class = "count">2/10</div>
+		</div>
+		<div style="margin:30px;
+						font-size: 29px;
+						font-weight: bold;">
+				질문2</div>
+		<input class = "slide_next_button" type="radio" id="q21" name = "q2" value="3"><label for="q21">답1</label>
+		<input class = "slide_next_button" type="radio" id="q22" name = "q2" value="4"><label for="q22">답2</label>
+	</div>
+	
+	<div class="slide_item">
+		<div class = "prev">
+			<button class="slide_prev_button" type="button">&lt</button>
+			<div class = "count">3/10</div>
+		</div>
+		<div style="margin:30px;
+						font-size: 29px;
+						font-weight: bold;">
+				질문3</div>
+		<input class = "slide_next_button" type="radio" id="q31" name = "q3" value="5"><label for="q31">답1</label>
+		<input class = "slide_next_button" type="radio" id="q32" name = "q3" value="6"><label for="q32">답2</label>
+	</div>
+	
+	<div class="slide_item">
+		<button class="result" type="submit">결과보기</button>
+	</div>
+
+	
+</div>
+</form>
+<script type="text/javascript" th:src="@{/ctest/slide.js}"></script>
+
+
+
+</div>
+</body>	
+</html>

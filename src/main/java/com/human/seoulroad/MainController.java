@@ -9,29 +9,16 @@ public class MainController {
 	
 	@GetMapping("/")
 	public String root() {
-		return "redirect:/home";
+		return "redirect:/main";
 	}
-	@RequestMapping("/AAA")
-	public String AAA() {
-		return "AAA";
-	}
-//	@RequestMapping("/AAA2")
-//	public String AAA2() {
-//		return "AAA2";
-//	}
-	@RequestMapping("/home")
+
+	@RequestMapping("/main")
 	public String home() {
-		return "home";
+		return "main/main";
 	}
 	
 	@RequestMapping("/introduce")
 	public String introduce() {
 		return "introduce";
 	}
-	@RequestMapping("/hello")
-	public String hello() {
-		return "hello";
-	}
-	
-	
 }
