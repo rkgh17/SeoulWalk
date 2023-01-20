@@ -238,6 +238,7 @@ th, td {
 }
 
 .faq-box__answer {
+  
   display:none;
   background-color:rgba(0,0,0,0.3);
   border-radius:10px;
@@ -248,6 +249,10 @@ th, td {
 }
 .tourlistspotimg {
 	 border-radius: 5%
+}
+.faq-box-content{
+	border:solid black 1px;
+	margin:5px;
 }
 /* course1.html ~ course8.html */
 
