@@ -15,6 +15,10 @@ public class MainController {
 	public String AAA() {
 		return "AAA";
 	}
+//	@RequestMapping("/AAA2")
+//	public String AAA2() {
+//		return "AAA2";
+//	}
 	@RequestMapping("/home")
 	public String home() {
 		return "home";
@@ -24,6 +28,10 @@ public class MainController {
 	public String introduce() {
 		return "introduce";
 	}
-
+	@RequestMapping("/hello")
+	public String hello() {
+		return "hello";
+	}
+	
 	
 }

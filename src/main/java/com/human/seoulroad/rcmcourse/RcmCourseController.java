@@ -17,10 +17,10 @@ public class RcmCourseController {
 		return "rcmFamily";
 	}
 	
-	@RequestMapping("/couple")
-	public String couple() {
-		return "rcmCouple";
-	}
+//	@RequestMapping("/couple")
+//	public String couple() {
+//		return "rcmCouple";
+//	}
 	
 	@RequestMapping("/restaurant")
 	public String restaurant() {
