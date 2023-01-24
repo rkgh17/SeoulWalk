@@ -33,40 +33,92 @@ public class TestController {
 					 @RequestParam String q8){
 
 		
+		switch(searchWeight(q1, q3, q5, q7)) {
+		case 0://가족 코스 분류
+			
+			switch(q4) {
+			case "a"://가족1-예술의전당
+				model.addAttribute("result","예술의 전당");
+				break;
+			case "b"://가족2-양재시민의숲
+				model.addAttribute("result","양재시민의 숲");
+				break;
+			case "c"://가족3-선유도공원
+				model.addAttribute("result","선유도 공원");
+				break;
+			}
+			
+			break;
+			
+		case 1://커플 코스 분류
+			
+			switch(q2) {
+			case "a"://커플1-하늘공원
+				model.addAttribute("result","하늘공원");
+				break;
+			case "b"://커플2-안양천
+				model.addAttribute("result","안양천");
+				break;
+			case "c"://커플3-올림픽공원
+				model.addAttribute("result","올림픽공원");
+				break;
+			}			
+			
+			break;
+			
+		case 2://맛집 코스 분류
+			
+			switch(q6) {
+			case "a"://맛집1-망리단길
+				model.addAttribute("result","망리단길");
+				break;
+			case "b"://맛집2-북한산 둘레길
+				model.addAttribute("result","북한산 둘레길");
+				break;
+			}			
+			
+			break;
+			
+		case 3://자연 코스 분류
+			
+			switch(q8) {
+			case "a"://자연1-태릉
+				model.addAttribute("result","태릉");
+				break;
+			case "b"://자연2-관악산
+				model.addAttribute("result","관악산");
+				break;
+			}					
+			
+			break;
 		
-
-		if(q1.equals("T")) {
-			model.addAttribute("q1","1번에 첫문항");
-		}else {
-			model.addAttribute("q1","1번에 두번째 문항");
 		}
 		
-		
-		model.addAttribute("q2", q2);
-		model.addAttribute("q3", q3);
 		
 		return "test/testresult";
 	}
 	
-	// 가중치 함수
-	public String searchWeight(String q1,String q3,String q5,String q7) {
+	// 가중치 함수 -> 인덱스 반환
+	public int searchWeight(String q1,String q3,String q5,String q7) {
 		int less = 3;
 		int middle = 5;
 		int high = 10;
-		int[] weight = {0,0,0,0};
+		int[] weight = {10,10,10,10};
 		
 		//q1
 		if(q1.equals("T")) {
-			weight[0] = weight[0] + high;
-			weight[1] = weight[1] + high;
+			weight[0] = weight[0] + middle;
+			weight[1] = weight[1] + middle;
 			weight[2] = weight[2] + less;
 		}else {
-			weight[3] = weight[3] + high; 
+			weight[1] = weight[1] - 10;
+			weight[3] = weight[3] + high;
 		}
 		
 		//q3
 		if(q3.equals("T")) {
-			weight[0] = weight[0] + middle;
+			weight[0] = weight[0] + high;
+			weight[1] = weight[1] + less;
 			weight[2] = weight[2] + high;
 			weight[3] = weight[3] + middle;
 		}else {
@@ -97,6 +149,6 @@ public class TestController {
 			}
 		}
 		
-		return null;
+		return maxindex;
 	}
 }
