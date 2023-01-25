@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.human.seoulroad.user.CustomOAuth2UserService;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
@@ -18,6 +20,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Controller
 public class reviewController2 {
+	
+	private final CustomOAuth2UserService userService;
 	
 	private final reviewService2 reviewService2;
 	private final reviewService3 reviewService3;
@@ -38,38 +42,53 @@ public class reviewController2 {
     }
     @GetMapping("/create2")
     public String reviewCreate2(reviewForm2 reviewForm2) {
+    	
+		if(userService.getSession() == null) {
+			return "login";
+		}
+    	
         return "reviewForm2";
     }
     @GetMapping("/create3")
     public String reviewCreate3(reviewForm3 reviewForm3) {
+		if(userService.getSession() == null) {
+			return "login";
+		}    	
         return "reviewForm3";
     }
     @GetMapping("/create4")
     public String reviewCreate4(reviewForm4 reviewForm4) {
+		if(userService.getSession() == null) {
+			return "login";
+		}    	
         return "reviewForm4";
     }
+    
+    
     @PostMapping("/create2")
     public String reviewCreate2(@Valid reviewForm2 reviewForm2, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "reviewform2";
         }
-    	this.reviewService2.create(reviewForm2.getReviewStar2(), reviewForm2.getId2(), reviewForm2.getReviewContents2());
+    	this.reviewService2.create(reviewForm2.getReviewStar2(), userService.getSession().getNickname(), reviewForm2.getReviewContents2());
         return "redirect:/recommendcourse/couple"; 
     }
+    
     @PostMapping("/create3")
     public String reviewCreate3(@Valid reviewForm3 reviewForm3, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "reviewform3";
         }
-    	this.reviewService3.create(reviewForm3.getReviewStar3(), reviewForm3.getId3(), reviewForm3.getReviewContents3());
+    	this.reviewService3.create(reviewForm3.getReviewStar3(), userService.getSession().getNickname(), reviewForm3.getReviewContents3());
         return "redirect:/recommendcourse/couple"; 
     }
+    
     @PostMapping("/create4")
     public String reviewCreate4(@Valid reviewForm4 reviewForm4, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "reviewform4";
         }
-    	this.reviewService4.create(reviewForm4.getReviewStar4(), reviewForm4.getId4(), reviewForm4.getReviewContents4());
+    	this.reviewService4.create(reviewForm4.getReviewStar4(), userService.getSession().getNickname(), reviewForm4.getReviewContents4());
         return "redirect:/recommendcourse/couple"; 
     }
 

@@ -8,8 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class reviewForm4 {
-	@NotEmpty(message="닉네임을 입력해주세요.")
-	@Size(max=10)
+
 	private String id4;
 	
 	@NotEmpty(message="내용을 입력해주세요.")
