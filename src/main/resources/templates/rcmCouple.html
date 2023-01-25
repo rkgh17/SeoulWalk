@@ -2,6 +2,7 @@
 <div layout:fragment="content" class="container my-5">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <style>
 .swiper-container {
 	width: 710px;
@@ -59,7 +60,6 @@ table, tr, td {
 	<h1 style="padding-top:15px; padding-bottom:15px;">커플 코스</h1>
 	<hr>
 	
-	
 	<div class="rcm-area02">
 		<div class="rcm-side">
 			<div class="rcm-side02">
@@ -101,6 +101,7 @@ table, tr, td {
 						<div class="container my-3">					
 						</div>
 						</div>
+						<div id="div1"></div>
 						<a  href="javascript:GetShow()"style="text-decoration: none; color: black;" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 설명보기</a>
 						<div id="hide" style="display: none">
 								2002년 제 17회 월드컵축구대회를 기념하여 난지도 제 2쓰레기매립지에 조성된 공원으로 매년 가을 억새축제가 열리는 사진 명소로도 유명하다. 특히 하늘공원을 가는길 중간에 있는 메타세콰이아 길을 걷는것도 좋은데, 하늘로 길게 뻗은 나무들이 서울에서는 보기힘든 시원함을 연출해주기 때문이다. 특히 메타세콰이어 길은 신혼부부가 웨딩화보촬영을 올 만큼 커플들이 사진찍기에 좋은 명소이다. 연인과 특별한 사진을 찍고싶은 사람들에게 추천.
@@ -122,10 +123,11 @@ table, tr, td {
 						
 					</div>
 					
-					
+				
 			<hr>
 	<div class="container my-3">
 	<table class="table" style="border-left: none; border-right: none;">
+		
     <thead>
         <tr>
             <th style="width: 80px;">별점</th>
@@ -146,21 +148,24 @@ table, tr, td {
 	</table>
     <!-- 페이징처리 시작 -->
     <div th:if="${!paging2.isEmpty()}">
+		
         <ul class="pagination justify-content-center">
             <li class="page-item" th:classappend="${!paging2.hasPrevious} ? 'disabled'">
                 <a class="page-link"
-                    th:href="@{|?page=${paging2.number-1}|}">
+                    th:href="@{|?page2=${paging2.number-1}#div1|}">
                     <span>이전</span>
                 </a>
             </li>
-            <li th:each="page: ${#numbers.sequence(0, paging2.totalPages-1)}"
-            	th:if="${page >= paging2.number-2 and page <= paging2.number+2}"
-                th:classappend="${page == paging2.number} ? 'active'" 
+            <li th:each="page2: ${#numbers.sequence(0, paging2.totalPages-1)}"
+            	th:if="${page2 >= paging2.number-2 and page2 <= paging2.number+2}"
+                th:classappend="${page2 == paging2.number} ? 'active'" 
                 class="page-item">
-                <a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>
+                <a th:text="${page2}" class="page-link" th:href="@{|?page2=${page2}#div1|}"></a>
+               
+               
             </li>
             <li class="page-item" th:classappend="${!paging2.hasNext} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=${paging2.number+1}|}">
+                <a class="page-link" th:href="@{|?page2=${paging2.number+1}#div1|}">
                     <span>다음</span>
                 </a>
             </li>
@@ -199,6 +204,7 @@ table, tr, td {
 								<div class="swiper-pagination"></div>
 							</div>
 						</div>
+						<div id="div2"></div>
 						<a href="javascript:Getshow()"style="text-decoration: none; color: black;" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 설명보기</a>
 						<div id="hide2" style="display: none">
 								안양천은 한강의 지류로 안양시, 광명시, 서울 금천구, 구로구 , 양천구, 영등포구를 지나 성산대교 서쪽에서 한강에 합류하는 하천이다.
@@ -249,18 +255,18 @@ table, tr, td {
         <ul class="pagination justify-content-center">
             <li class="page-item" th:classappend="${!paging3.hasPrevious} ? 'disabled'">
                 <a class="page-link"
-                    th:href="@{|?page=${paging3.number-1}|}">
+                    th:href="@{|?page3=${paging3.number-1}#div2|}">
                     <span>이전</span>
                 </a>
             </li>
-            <li th:each="page: ${#numbers.sequence(0, paging3.totalPages-1)}"
-            	th:if="${page >= paging3.number-2 and page <= paging3.number+2}"
-                th:classappend="${page == paging3.number} ? 'active'" 
+            <li th:each="page3: ${#numbers.sequence(0, paging3.totalPages-1)}"
+            	th:if="${page3 >= paging3.number-2 and page3 <= paging3.number+2}"
+                th:classappend="${page3 == paging3.number} ? 'active'" 
                 class="page-item">
-                <a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>
+                <a th:text="${page3}" class="page-link" th:href="@{|?page3=${page3}#div2|}"></a>
             </li>
             <li class="page-item" th:classappend="${!paging3.hasNext} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=${paging3.number+1}|}">
+                <a class="page-link" th:href="@{|?page3=${paging3.number+1}#div2|}">
                     <span>다음</span>
                 </a>
             </li>
@@ -322,6 +328,7 @@ table, tr, td {
 						<div>
 							◾ 소요시간 : 1시간 30분
  						</div>
+ 						
 						<div>
 							◾ 난이도 : 초급
 						</div>						
@@ -329,7 +336,7 @@ table, tr, td {
 						
 					</div>
 					
-					
+					<div id="div3"></div>
 					<hr>
 <div class="container my-3">
 	<table class="table" style="border-left: none; border-right: none;">
@@ -356,18 +363,18 @@ table, tr, td {
         <ul class="pagination justify-content-center">
             <li class="page-item" th:classappend="${!paging4.hasPrevious} ? 'disabled'">
                 <a class="page-link"
-                    th:href="@{|?page=${paging4.number-1}|}">
+                    th:href="@{|?page4=${paging4.number-1}#div3|}">
                     <span>이전</span>
                 </a>
             </li>
-            <li th:each="page: ${#numbers.sequence(0, paging4.totalPages-1)}"
-          		th:if="${page >= paging4.number-2 and page <= paging4.number+2}"
-                th:classappend="${page == paging4.number} ? 'active'" 
+            <li th:each="page4: ${#numbers.sequence(0, paging4.totalPages-1)}"
+          		th:if="${page4 >= paging4.number-2 and page4 <= paging4.number+2}"
+                th:classappend="${page4 == paging4.number} ? 'active'" 
                 class="page-item">
-                <a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>
+                <a th:text="${page4}" class="page-link" th:href="@{|?page4=${page4}#div3|}"></a>
             </li>
             <li class="page-item" th:classappend="${!paging4.hasNext} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=${paging4.number+1}|}">
+                <a class="page-link" th:href="@{|?page4=${paging4.number+1}#div3|}">
                     <span>다음</span>
                 </a>
             </li>
@@ -376,7 +383,7 @@ table, tr, td {
     <!-- 페이징처리 끝 -->
 	<a th:href="@{/recommendcourse/create4}" class="btn btn-secondary">후기등록</a>
 	</div>
-					
+			
 					
 				</div><hr><br>
 			
@@ -451,7 +458,7 @@ function Getshow(){	 // 설명 자세히
 		}
 	}
 
-function Get_Show(){	 // 설명 자세히
+	function Get_Show(){	 // 설명 자세히
 		var con = document.getElementById("hide4");
 		if(con.style.display == "none"){
 			con.style.display = "block"; 
@@ -470,6 +477,7 @@ function Get_Show(){	 // 설명 자세히
 			con.style.display = "none"
 		}
 	}
+
 
 </script>
 </div>

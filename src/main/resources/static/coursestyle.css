@@ -26,8 +26,8 @@
 /* 좌,우 슬라이드 버튼 */
 .slide-control > div {display:none;}
 
-.section .left {left:30px;background:url('+ @{/img/detail/left.png} +') center center / 100% no-repeat;}
-.section .right {right:30px;background:url('+ @{/img/detail/right.png} +') center center / 100% no-repeat;}
+.section .left {left:30px;background:url('+ @{/img/detail/left.png} +') center center / 100% no-repeat; z-index: 0;}
+.section .right {right:30px;background:url('+ @{/img/detail/right.png} +') center center / 100% no-repeat; z-index: 0;}
 
 
 .section input[id="slide01"]:checked ~ .slidewrap .slide-control > div:nth-child(1) {display:block;}
@@ -41,3 +41,4 @@
 .section input[id="slide01"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(1) > label {background:#999;}
 .section input[id="slide02"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(2) > label {background:#999;}
 .section input[id="slide03"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(3) > label {background:#999;}
+.faq-box__answer{width: 450px;}

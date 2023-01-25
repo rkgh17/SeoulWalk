@@ -9,13 +9,22 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<title>1코스 경로</title>
 </head>
-
+<style>
+	.left{
+		z-index: -1;
+		position: relative;
+	}
+	:right{
+		z-index: -1;
+		position: relative;
+	}
+</style>
 <body>
 
 <div layout:fragment="content" class="container my-5">
 
 	
-	<div class="coursetext">	
+	<div  class="coursetext">	
 		<div class="coursetextSubText">서울 노원구ㆍ도봉구</div>
 		<h1 class="coursetextTitle">서울둘레길 1코스 수락·불암산코스</h1>
 		<div class="coursetextSubText">길이 18.6km ㆍ 소요시간 8시간 40분 ㆍ 난이도 고급</div>
@@ -27,7 +36,7 @@
 			<div class="slidewrap">
 				
 				
-				<ul class="slidelist">
+				<ul style="z-index: 0;" class="slidelist">
 					<!-- 슬라이드 영역 -->
 					<li class="slideitem">
 						<a>
@@ -61,7 +70,7 @@
 					</li>
 					<!-- 좌,우 슬라이드 버튼 -->
 					
-					<div style="z-index: -1; positon :relative;" class="slide-control">
+					<div  class="slide-control">
 						<div>
 							<label th:style="'background-image:url('+ @{/img/detail/left.png} +');'" for="slide03" class="left"></label>
 							<label th:style="'background-image:url('+ @{/img/detail/right.png} +');'" for="slide02" class="right"></label>
@@ -75,15 +84,17 @@
 							<label th:style="'background-image:url('+ @{/img/detail/right.png} +');'" for="slide01" class="right"></label>
 						</div>
 					</div>
-					
+				
 		
 				</ul>
 				<!-- 페이징 -->
+				
 				<ul class="slide-pagelist">
 					<li><label for="slide01"></label></li>
 					<li><label for="slide02"></label></li>
 					<li><label for="slide03"></label></li>
 				</ul>
+
 				
 			</div>	
 		</div>
@@ -92,7 +103,7 @@
 	</div>
 
 	<!-- 지도 영역 -->	    
-	<div id="map" style="width:100%;height:400px; z-index: -1;"></div>
+	<div id="map" style="width:100%;height:400px; z-index: 0;"></div>
 	
 	<br><br>
 	
