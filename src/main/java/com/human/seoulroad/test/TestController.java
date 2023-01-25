@@ -1,10 +1,9 @@
 package com.human.seoulroad.test;
 
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -21,7 +20,15 @@ public class TestController {
 		return "test/teststart";
 	}
 	
-	@PostMapping("/test-form")
+	@GetMapping(path = "/seoulwalktest/{result}")
+	public String sns(@PathVariable(name = "result") String result ,Model model) {
+		model.addAttribute("result",result);
+		return "test/testresult";
+		
+	}
+	
+	// 테스트 결과 보여주기
+	@PostMapping("/seoulwalktest")
 	public String tr(Model model,
 					 @RequestParam String q1,
 					 @RequestParam String q2,
@@ -44,7 +51,7 @@ public class TestController {
 				model.addAttribute("result","양재시민의 숲");
 				break;
 			case "c"://가족3-선유도공원
-				model.addAttribute("result","선유도 공원");
+				model.addAttribute("result","선유도공원");
 				break;
 			}
 			
@@ -57,10 +64,10 @@ public class TestController {
 				model.addAttribute("result","하늘공원");
 				break;
 			case "b"://커플2-안양천
-				model.addAttribute("result","안양천");
+				model.addAttribute("result","안양천 벚꽃길");
 				break;
 			case "c"://커플3-올림픽공원
-				model.addAttribute("result","올림픽공원");
+				model.addAttribute("result","올림픽 공원");
 				break;
 			}			
 			
@@ -83,7 +90,7 @@ public class TestController {
 			
 			switch(q8) {
 			case "a"://자연1-태릉
-				model.addAttribute("result","태릉");
+				model.addAttribute("result","태릉 강릉");
 				break;
 			case "b"://자연2-관악산
 				model.addAttribute("result","관악산");
@@ -97,6 +104,9 @@ public class TestController {
 		
 		return "test/testresult";
 	}
+	
+	
+	
 	
 	// 가중치 함수 -> 인덱스 반환
 	public int searchWeight(String q1,String q3,String q5,String q7) {
