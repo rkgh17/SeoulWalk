@@ -26,7 +26,7 @@
 			<input type="radio" name="slide" id="slide03">
 			<div class="slidewrap">
 				
-				<div style="z-index: -1;">
+				
 				<ul class="slidelist">
 					<!-- 슬라이드 영역 -->
 					<li class="slideitem">
@@ -60,8 +60,8 @@
 						</a>
 					</li>
 					<!-- 좌,우 슬라이드 버튼 -->
-					<div style="z-index: 2; ">
-					<div class="slide-control">
+					
+					<div style="z-index: -1; positon :relative;" class="slide-control">
 						<div>
 							<label th:style="'background-image:url('+ @{/img/detail/left.png} +');'" for="slide03" class="left"></label>
 							<label th:style="'background-image:url('+ @{/img/detail/right.png} +');'" for="slide02" class="right"></label>
@@ -75,7 +75,7 @@
 							<label th:style="'background-image:url('+ @{/img/detail/right.png} +');'" for="slide01" class="right"></label>
 						</div>
 					</div>
-					</div>
+					
 		
 				</ul>
 				<!-- 페이징 -->
@@ -84,7 +84,7 @@
 					<li><label for="slide02"></label></li>
 					<li><label for="slide03"></label></li>
 				</ul>
-				</div>
+				
 			</div>	
 		</div>
 	<div class="content2">
