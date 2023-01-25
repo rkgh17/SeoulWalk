@@ -28,7 +28,7 @@
 
 /*임여명*/
 .lay{ 
-	z-index: 1;
+	
 }
 
 p{
@@ -255,7 +255,7 @@ th, td {
 	 border-radius: 5%
 }
 .faq-box-content{
-	border:solid black 1px;
+	
 	margin:5px;
 }
 /* course1.html ~ course8.html */
