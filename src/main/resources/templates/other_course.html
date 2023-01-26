@@ -1,6 +1,7 @@
 <html layout:decorate="~{layout}"> 
 <body>
 <div layout:fragment="content" class="container my-5">
+	
   
 	
 	<!--<table class="courseTable" style="border-left: none; border-right: none;">
@@ -11,7 +12,7 @@
  
  
  
-	 	<table class="courseTable" style="border-left: none; border-right: none;">
+	 	<table class="courseTable02" style="border-left: none; border-right: none;">
 		    <thead>
 		        <tr>
 		            <th style="border-left: none;">구분</th>
@@ -30,8 +31,8 @@
 		            <td th:text="${list.courseDistance}"></td>
 		            <td th:text="${list.estimatedDuration}"></td>
 		            <td th:text="${list.courseDifficulty}"></td>
-		            <td  th:text="${list.courseName}"></td>
-		            <td style="border-right: none;"><img th:src="${list.img}"/></td>
+		            <td th:text="${list.courseName}"></td>
+		            <td style="border-right: none; width: 200px;"><img th:src="${list.img}"/></td>
 		        </tr>
 		    </tbody>
 		</table>
