@@ -16,7 +16,7 @@ import com.human.seoulroad.user.CustomOAuth2UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
-@RequestMapping("/recommendcourse")
+@RequestMapping("recommendcourse")
 @RequiredArgsConstructor
 @Controller
 public class reviewController2 {

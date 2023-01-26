@@ -1,8 +1,12 @@
 <html layout:decorate="~{layout}">
 <head>
 <link rel="stylesheet" type="text/css" th:href="@{/ctest/slide.css}">
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js" integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script>
+Kakao.init('39b4049e1049b0ff47d6738edcb2c49c');
+</script>
 </head>
-	
+
 <body>
 <div layout:fragment="content">
 
@@ -26,6 +30,11 @@
 			
 			<div style="margin:30px;">
 				<button class="slide_next_button" type="button">테스트 시작하기</button>
+			</div>
+			<div style="width:358px; display:flex; justify-content:space-around; padding-top:50px;">
+				<a id="btnTwitter" href="javascript:shareTwitter();"><img th:src="@{/img/rcmcourse/icon/icon-twitter.png}"></a>
+				<a id="btnFacebook" href="javascript:shareFacebook();"><img th:src="@{/img/rcmcourse/icon/icon-facebook.png}"></a>
+				<a id="btnKakao" href="javascript:shareKakao();"><img th:src="@{/img/rcmcourse/icon/icon-kakao.png}"></a>
 			</div>
 			
 	</div>
@@ -135,7 +144,36 @@
 </div>
 </form>
 <script type="text/javascript" th:src="@{/ctest/slide.js}"></script>
+<script th:inline="javascript">
 
+// sns 공유 기능
+function shareTwitter(){
+	var sendText = "나만의 둘레길 유형 테스트";
+	var sendUrl = "http://localhost:8080/roadtest";
+	window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
+}
+
+function shareFacebook() {
+    var sendUrl = "http://localhost:8080/roadtest";
+    window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
+}
+
+function shareKakao(){
+	Kakao.Share.createDefaultButton({
+		container : "#btnKakao",
+		objectType: "feed",
+		content: {
+			title: "둘레길 유형 테스트",
+			description: "나에게 맞는 둘레길 코스는?",
+			imageUrl : "",
+			link:{
+				webUrl: "http://localhost:8080/roadtest",
+				mobileWebUrl:"http://localhost:8080/roadtest"
+			}
+		}
+	});
+}
+</script>
 
 
 </div>

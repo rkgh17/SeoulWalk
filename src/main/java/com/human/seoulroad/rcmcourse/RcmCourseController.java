@@ -3,7 +3,7 @@ package com.human.seoulroad.rcmcourse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/recommendcourse")
+@RequestMapping("recommendcourse")
 @Controller
 public class RcmCourseController {
 	

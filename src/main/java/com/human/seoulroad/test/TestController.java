@@ -14,11 +14,6 @@ public class TestController {
 	public String roadTest() {
 		return "test/test";
 	}
-
-	@GetMapping("/roadtest/start")
-	public String ts() {
-		return "test/teststart";
-	}
 	
 	@GetMapping(path = "/seoulwalktest/{result}")
 	public String sns(@PathVariable(name = "result") String result ,Model model) {
