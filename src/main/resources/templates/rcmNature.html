@@ -18,8 +18,31 @@
 	box-shadow:0 0 5px #555;
 	max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
 
-	/* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
+	
 
+}
+.page-link {
+  color: #000; 
+  background-color: #fff;
+  border: 1px solid #ccc; 
+}
+
+.page-item.active .page-link {
+ z-index: 1;
+ color: #555;
+ font-weight:bold;
+ background-color: #f1f1f1;
+ border-color: #ccc;
+ 
+}
+
+.page-link:focus, .page-link:hover {
+  color: #000;
+  background-color: #fafafa; 
+  border-color: #ccc;
+}
+table, tr, td {
+ border:none;
 }
 
 </style>
@@ -64,6 +87,7 @@
 								<div class="swiper-pagination"></div>
 							</div>
 						</div>
+						<div id="div1"></div>
 						<a href="javascript:GetShow()"style="text-decoration: none; color: black;" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 설명보기</a>
 						<div id="hide" style="display: none">
 								태릉은 조선 제 11대왕인 중종 제2의 계비 문정왕후 윤씨의 능으로써 단릉이라고는 믿기 힘든 웅장한 느낌을 준다. 
@@ -87,10 +111,63 @@
 						<div>
 							◾ 난이도 : 중급
 						</div>
-						
-							
 					
+				
 				</div>
+				
+				
+				
+			<hr>
+				<div class="container my-3">
+				<table class="table" style="border-left: none; border-right: none;">
+					
+			    <thead>
+			        <tr>
+			            <th style="width: 80px;">별점</th>
+			            <th style="width: 120px;">닉네임</th>
+			            <th>후기</th>
+			        	<th style="width: 150px;">작성일자</th>
+			
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr th:each="review10, loop : ${paging10}">
+					    <td style="width: 80px;" th:text="${review10.reviewStar10}"></td>
+			            <td style="width: 120px;" th:text="${review10.id10}"></td>
+			            <td th:text="${review10.reviewContents10}"></td>
+			            <td style="width: 150px;" th:text="${#temporals.format(review10.createDate10, 'yyyy-MM-dd HH:mm')}"></td>
+			        </tr>
+			    </tbody>
+				</table>
+			    <!-- 페이징처리 시작 -->
+			    <div th:if="${!paging10.isEmpty()}">
+					
+			        <ul class="pagination justify-content-center">
+			            <li class="page-item" th:classappend="${!paging10.hasPrevious} ? 'disabled'">
+			                <a class="page-link"
+			                    th:href="@{|?page10=${paging10.number-1}#div1|}">
+			                    <span>이전</span>
+			                </a>
+			            </li>
+			            <li th:each="page10: ${#numbers.sequence(0, paging10.totalPages-1)}"
+			            	th:if="${page10 >= paging10.number-2 and page10 <= paging10.number+2}"
+			                th:classappend="${page10 == paging10.number} ? 'active'" 
+			                class="page-item">
+			                <a th:text="${page10}" class="page-link" th:href="@{|?page10=${page10}#div1|}"></a>
+			               
+			               
+			            </li>
+			            <li class="page-item" th:classappend="${!paging10.hasNext} ? 'disabled'">
+			                <a class="page-link" th:href="@{|?page10=${paging10.number+1}#div1|}">
+			                    <span>다음</span>
+			                </a>
+			            </li>
+			        </ul>
+			    </div>
+			    <!-- 페이징처리 끝 -->
+				<a th:href="@{/recommendcourse/create10}" class="btn btn-secondary">후기등록</a>
+				</div>
+				
 				
 				
 				<div class="rcm-boxalign">
@@ -119,6 +196,7 @@
 								<div class="swiper-pagination"></div>
 							</div>
 						</div>
+						<div id="div2"></div>
 						<a href="javascript:Getshow()"style="text-decoration: none; color: black;" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 설명보기</a>
 						<div id="hide2" style="display: none">
 								개성의 송악산, 파주의 감악산, 포천의 운악산, 가평의 화악산과 더불어 경기 5악에 속했던 산으로 주봉은 연주대이고, 산정의 영주대는 
@@ -145,6 +223,63 @@
 							
 						
 					</div>
+					
+					
+					
+			<hr>
+				<div class="container my-3">
+				<table class="table" style="border-left: none; border-right: none;">
+					
+			    <thead>
+			        <tr>
+			            <th style="width: 80px;">별점</th>
+			            <th style="width: 120px;">닉네임</th>
+			            <th>후기</th>
+			        	<th style="width: 150px;">작성일자</th>
+			
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr th:each="review11, loop : ${paging11}">
+					    <td style="width: 80px;" th:text="${review11.reviewStar11}"></td>
+			            <td style="width: 120px;" th:text="${review11.id11}"></td>
+			            <td th:text="${review11.reviewContents11}"></td>
+			            <td style="width: 150px;" th:text="${#temporals.format(review11.createDate11, 'yyyy-MM-dd HH:mm')}"></td>
+			        </tr>
+			    </tbody>
+				</table>
+			    <!-- 페이징처리 시작 -->
+			    <div th:if="${!paging11.isEmpty()}">
+					
+			        <ul class="pagination justify-content-center">
+			            <li class="page-item" th:classappend="${!paging11.hasPrevious} ? 'disabled'">
+			                <a class="page-link"
+			                    th:href="@{|?page11=${paging11.number-1}#div2|}">
+			                    <span>이전</span>
+			                </a>
+			            </li>
+			            <li th:each="page11: ${#numbers.sequence(0, paging11.totalPages-1)}"
+			            	th:if="${page11 >= paging11.number-2 and page11 <= paging11.number+2}"
+			                th:classappend="${page11 == paging11.number} ? 'active'" 
+			                class="page-item">
+			                <a th:text="${page11}" class="page-link" th:href="@{|?page11=${page11}#div2|}"></a>
+			               
+			               
+			            </li>
+			            <li class="page-item" th:classappend="${!paging11.hasNext} ? 'disabled'">
+			                <a class="page-link" th:href="@{|?page11=${paging11.number+1}#div2|}">
+			                    <span>다음</span>
+			                </a>
+			            </li>
+			        </ul>
+			    </div>
+			    <!-- 페이징처리 끝 -->
+				<a th:href="@{/recommendcourse/create11}" class="btn btn-secondary">후기등록</a>
+				</div>
+					
+					
+					
+					
 				</div><hr><br>
 			
 				

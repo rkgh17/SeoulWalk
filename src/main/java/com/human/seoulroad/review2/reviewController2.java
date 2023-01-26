@@ -29,8 +29,9 @@ public class reviewController2 {
 
     @GetMapping("/couple")
     public String list(Model model, @RequestParam(value="page2", defaultValue="0") int page2,
-    		@RequestParam(value="page3", defaultValue="0") int page3,
-    		@RequestParam(value="page4", defaultValue="0") int page4) {
+						    		@RequestParam(value="page3", defaultValue="0") int page3,
+						    		@RequestParam(value="page4", defaultValue="0") int page4)
+    {
         Page<review2> paging2 = this.reviewService2.getList(page2);
         model.addAttribute("paging2", paging2);
         

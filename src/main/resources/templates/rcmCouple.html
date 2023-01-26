@@ -20,7 +20,7 @@
 	box-shadow:0 0 5px #555;
 	max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
 	
-	/* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
+	
 
 }
 
@@ -124,58 +124,58 @@ table, tr, td {
 					</div>
 					
 				
-			<hr>
-	<div class="container my-3">
-	<table class="table" style="border-left: none; border-right: none;">
-		
-    <thead>
-        <tr>
-            <th style="width: 80px;">별점</th>
-            <th style="width: 120px;">닉네임</th>
-            <th>후기</th>
-        	<th style="width: 150px;">작성일자</th>
+						<hr>
+				<div class="container my-3">
+				<table class="table" style="border-left: none; border-right: none;">
+					
+			    <thead>
+			        <tr>
+			            <th style="width: 80px;">별점</th>
+			            <th style="width: 120px;">닉네임</th>
+			            <th>후기</th>
+			        	<th style="width: 150px;">작성일자</th>
+			
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr th:each="review2, loop : ${paging2}">
+					    <td style="width: 80px;" th:text="${review2.reviewStar2}"></td>
+			            <td style="width: 120px;" th:text="${review2.id2}"></td>
+			            <td th:text="${review2.reviewContents2}"></td>
+			            <td style="width: 150px;" th:text="${#temporals.format(review2.createDate2, 'yyyy-MM-dd HH:mm')}"></td>
+			        </tr>
+			    </tbody>
+				</table>
+			    <!-- 페이징처리 시작 -->
+			    <div th:if="${!paging2.isEmpty()}">
+					
+			        <ul class="pagination justify-content-center">
+			            <li class="page-item" th:classappend="${!paging2.hasPrevious} ? 'disabled'">
+			                <a class="page-link"
+			                    th:href="@{|?page2=${paging2.number-1}#div1|}">
+			                    <span>이전</span>
+			                </a>
+			            </li>
+			            <li th:each="page2: ${#numbers.sequence(0, paging2.totalPages-1)}"
+			            	th:if="${page2 >= paging2.number-2 and page2 <= paging2.number+2}"
+			                th:classappend="${page2 == paging2.number} ? 'active'" 
+			                class="page-item">
+			                <a th:text="${page2}" class="page-link" th:href="@{|?page2=${page2}#div1|}"></a>
+			               
+			               
+			            </li>
+			            <li class="page-item" th:classappend="${!paging2.hasNext} ? 'disabled'">
+			                <a class="page-link" th:href="@{|?page2=${paging2.number+1}#div1|}">
+			                    <span>다음</span>
+			                </a>
+			            </li>
+			        </ul>
+			    </div>
+			    <!-- 페이징처리 끝 -->
+				<a th:href="@{/recommendcourse/create2}" class="btn btn-secondary">후기등록</a>
+				</div>
 
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="review2, loop : ${paging2}">
-		    <td style="width: 80px;" th:text="${review2.reviewStar2}"></td>
-            <td style="width: 120px;" th:text="${review2.id2}"></td>
-            <td th:text="${review2.reviewContents2}"></td>
-            <td style="width: 150px;" th:text="${#temporals.format(review2.createDate2, 'yyyy-MM-dd HH:mm')}"></td>
-        </tr>
-    </tbody>
-	</table>
-    <!-- 페이징처리 시작 -->
-    <div th:if="${!paging2.isEmpty()}">
-		
-        <ul class="pagination justify-content-center">
-            <li class="page-item" th:classappend="${!paging2.hasPrevious} ? 'disabled'">
-                <a class="page-link"
-                    th:href="@{|?page2=${paging2.number-1}#div1|}">
-                    <span>이전</span>
-                </a>
-            </li>
-            <li th:each="page2: ${#numbers.sequence(0, paging2.totalPages-1)}"
-            	th:if="${page2 >= paging2.number-2 and page2 <= paging2.number+2}"
-                th:classappend="${page2 == paging2.number} ? 'active'" 
-                class="page-item">
-                <a th:text="${page2}" class="page-link" th:href="@{|?page2=${page2}#div1|}"></a>
-               
-               
-            </li>
-            <li class="page-item" th:classappend="${!paging2.hasNext} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page2=${paging2.number+1}#div1|}">
-                    <span>다음</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- 페이징처리 끝 -->
-	<a th:href="@{/recommendcourse/create2}" class="btn btn-secondary">후기등록</a>
-	</div>
-
-				</div><hr>
+				</div><hr><br>
 				
 				<div class="rcm-boxalign">
 				<div class="rcm-content02" id="c2">
@@ -225,52 +225,52 @@ table, tr, td {
 					</div>
 					
 					
-			<hr>
-<div class="container my-3">
-	<table class="table" style="border-left: none; border-right: none;">
-    <thead>
-        <tr>
-            <th style="width: 80px;">별점</th>
-            <th style="width: 120px;">닉네임</th>
-            <th>후기</th>
-        	<th style="width: 150px;">작성일자</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="review3, loop : ${paging3}">
-		    <td style="width: 80px;" th:text="${review3.reviewStar3}"></td>
-            <td style="width: 120px;" th:text="${review3.id3}"></td>
-            <td th:text="${review3.reviewContents3}"></td>
-            <td style="width: 150px;" th:text="${#temporals.format(review3.createDate3, 'yyyy-MM-dd HH:mm')}"></td>
-        </tr>
-    </tbody>
-	</table>
-    <!-- 페이징처리 시작 -->
-    <div th:if="${!paging3.isEmpty()}">
-        <ul class="pagination justify-content-center">
-            <li class="page-item" th:classappend="${!paging3.hasPrevious} ? 'disabled'">
-                <a class="page-link"
-                    th:href="@{|?page3=${paging3.number-1}#div2|}">
-                    <span>이전</span>
-                </a>
-            </li>
-            <li th:each="page3: ${#numbers.sequence(0, paging3.totalPages-1)}"
-            	th:if="${page3 >= paging3.number-2 and page3 <= paging3.number+2}"
-                th:classappend="${page3 == paging3.number} ? 'active'" 
-                class="page-item">
-                <a th:text="${page3}" class="page-link" th:href="@{|?page3=${page3}#div2|}"></a>
-            </li>
-            <li class="page-item" th:classappend="${!paging3.hasNext} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page3=${paging3.number+1}#div2|}">
-                    <span>다음</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- 페이징처리 끝 -->
-	<a th:href="@{/recommendcourse/create3}" class="btn btn-secondary">후기등록</a>
-	</div>
+						<hr>
+			<div class="container my-3">
+				<table class="table" style="border-left: none; border-right: none;">
+			    <thead>
+			        <tr>
+			            <th style="width: 80px;">별점</th>
+			            <th style="width: 120px;">닉네임</th>
+			            <th>후기</th>
+			        	<th style="width: 150px;">작성일자</th>
+			
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr th:each="review3, loop : ${paging3}">
+					    <td style="width: 80px;" th:text="${review3.reviewStar3}"></td>
+			            <td style="width: 120px;" th:text="${review3.id3}"></td>
+			            <td th:text="${review3.reviewContents3}"></td>
+			            <td style="width: 150px;" th:text="${#temporals.format(review3.createDate3, 'yyyy-MM-dd HH:mm')}"></td>
+			        </tr>
+			    </tbody>
+				</table>
+			    <!-- 페이징처리 시작 -->
+			    <div th:if="${!paging3.isEmpty()}">
+			        <ul class="pagination justify-content-center">
+			            <li class="page-item" th:classappend="${!paging3.hasPrevious} ? 'disabled'">
+			                <a class="page-link"
+			                    th:href="@{|?page3=${paging3.number-1}#div2|}">
+			                    <span>이전</span>
+			                </a>
+			            </li>
+			            <li th:each="page3: ${#numbers.sequence(0, paging3.totalPages-1)}"
+			            	th:if="${page3 >= paging3.number-2 and page3 <= paging3.number+2}"
+			                th:classappend="${page3 == paging3.number} ? 'active'" 
+			                class="page-item">
+			                <a th:text="${page3}" class="page-link" th:href="@{|?page3=${page3}#div2|}"></a>
+			            </li>
+			            <li class="page-item" th:classappend="${!paging3.hasNext} ? 'disabled'">
+			                <a class="page-link" th:href="@{|?page3=${paging3.number+1}#div2|}">
+			                    <span>다음</span>
+			                </a>
+			            </li>
+			        </ul>
+			    </div>
+			    <!-- 페이징처리 끝 -->
+				<a th:href="@{/recommendcourse/create3}" class="btn btn-secondary">후기등록</a>
+				</div>
 	
 
 				
@@ -324,53 +324,53 @@ table, tr, td {
 						
 					</div>
 					
-					<div id="div3"></div>
-					<hr>
-<div class="container my-3">
-	<table class="table" style="border-left: none; border-right: none;">
-    <thead>
-        <tr>
-            <th style="width: 80px;">별점</th>
-            <th style="width: 120px;">닉네임</th>
-            <th>후기</th>
-        	<th style="width: 150px;">작성일자</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="review4, loop : ${paging4}">
-		    <td style="width: 80px;" th:text="${review4.reviewStar4}"></td>
-            <td style="width: 120px;" th:text="${review4.id4}"></td>
-            <td th:text="${review4.reviewContents4}"></td>
-            <td style="width: 150px;" th:text="${#temporals.format(review4.createDate4, 'yyyy-MM-dd HH:mm')}"></td>
-        </tr>
-    </tbody>
-	</table>
-    <!-- 페이징처리 시작 -->
-    <div th:if="${!paging4.isEmpty()}">
-        <ul class="pagination justify-content-center">
-            <li class="page-item" th:classappend="${!paging4.hasPrevious} ? 'disabled'">
-                <a class="page-link"
-                    th:href="@{|?page4=${paging4.number-1}#div3|}">
-                    <span>이전</span>
-                </a>
-            </li>
-            <li th:each="page4: ${#numbers.sequence(0, paging4.totalPages-1)}"
-          		th:if="${page4 >= paging4.number-2 and page4 <= paging4.number+2}"
-                th:classappend="${page4 == paging4.number} ? 'active'" 
-                class="page-item">
-                <a th:text="${page4}" class="page-link" th:href="@{|?page4=${page4}#div3|}"></a>
-            </li>
-            <li class="page-item" th:classappend="${!paging4.hasNext} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page4=${paging4.number+1}#div3|}">
-                    <span>다음</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- 페이징처리 끝 -->
-	<a th:href="@{/recommendcourse/create4}" class="btn btn-secondary">후기등록</a>
-	</div>
+			<div id="div3"></div>
+			<hr>
+			<div class="container my-3">
+				<table class="table" style="border-left: none; border-right: none;">
+			    <thead>
+			        <tr>
+			            <th style="width: 80px;">별점</th>
+			            <th style="width: 120px;">닉네임</th>
+			            <th>후기</th>
+			        	<th style="width: 150px;">작성일자</th>
+			
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr th:each="review4, loop : ${paging4}">
+					    <td style="width: 80px;" th:text="${review4.reviewStar4}"></td>
+			            <td style="width: 120px;" th:text="${review4.id4}"></td>
+			            <td th:text="${review4.reviewContents4}"></td>
+			            <td style="width: 150px;" th:text="${#temporals.format(review4.createDate4, 'yyyy-MM-dd HH:mm')}"></td>
+			        </tr>
+			    </tbody>
+				</table>
+			    <!-- 페이징처리 시작 -->
+			    <div th:if="${!paging4.isEmpty()}">
+			        <ul class="pagination justify-content-center">
+			            <li class="page-item" th:classappend="${!paging4.hasPrevious} ? 'disabled'">
+			                <a class="page-link"
+			                    th:href="@{|?page4=${paging4.number-1}#div3|}">
+			                    <span>이전</span>
+			                </a>
+			            </li>
+			            <li th:each="page4: ${#numbers.sequence(0, paging4.totalPages-1)}"
+			          		th:if="${page4 >= paging4.number-2 and page4 <= paging4.number+2}"
+			                th:classappend="${page4 == paging4.number} ? 'active'" 
+			                class="page-item">
+			                <a th:text="${page4}" class="page-link" th:href="@{|?page4=${page4}#div3|}"></a>
+			            </li>
+			            <li class="page-item" th:classappend="${!paging4.hasNext} ? 'disabled'">
+			                <a class="page-link" th:href="@{|?page4=${paging4.number+1}#div3|}">
+			                    <span>다음</span>
+			                </a>
+			            </li>
+			        </ul>
+			    </div>
+			    <!-- 페이징처리 끝 -->
+				<a th:href="@{/recommendcourse/create4}" class="btn btn-secondary">후기등록</a>
+				</div>
 			
 					
 				</div><hr><br>
