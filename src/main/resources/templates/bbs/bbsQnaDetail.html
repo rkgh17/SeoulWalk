@@ -3,7 +3,8 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/bbs.css}">
 </head>
 <div layout:fragment="content" class="container my-5">
-<h1 style="padding-top:15px; padding-bottom:15px;">소통 게시판</h1>
+<div style = "padding-top:50px;">
+<h1 style="padding-top:15px; padding-bottom:15px; padding-left:15px;">소통 게시판</h1>
 <hr>
 
 <div class="bbscontent">
@@ -60,8 +61,7 @@
     </table>
     
     <!-- 추천, 수정, 삭제 영역 -->
-    <span class="d-flex justify-content-between"
-    	  style="margin-right:16px;">
+    <span class="d-flex justify-content-between">
     	<span>
 			<div th:if="${question.modifyDate != null}"
 	     		 class="badge bg-light text-dark p-2 text-start">
@@ -160,23 +160,23 @@
 		
 
 	
-	<!-- 답변 등록 form -->
-    <form th:action="@{|/answer/create/${question.id}|}" th:object="${answerForm}" method="post" class="my-3">
-        <div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
-        	<div th:each="err : ${#fields.allErrors()}" th:text="${err}" />
-        </div>
-        <textarea class="comment" id="aft1" sec:authorize="isAnonymous()" disabled th:field="*{content}"></textarea>
-        <textarea class="comment" sec:authorize="isAuthenticated()" th:field="*{content}"></textarea>
-        <div style="display:flex; justify-content:end;">
-        <input type="submit" value="댓글등록" class="btn btn-success my-2">
-        </div>
-    </form>
-	
+		<!-- 답변 등록 form -->
+	    <form th:action="@{|/answer/create/${question.id}|}" th:object="${answerForm}" method="post" class="my-3">
+	        <div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
+	        	<div th:each="err : ${#fields.allErrors()}" th:text="${err}" />
+	        </div>
+	        <textarea class="comment" id="aft1" sec:authorize="isAnonymous()" disabled th:field="*{content}"></textarea>
+	        <textarea class="comment" sec:authorize="isAuthenticated()" th:field="*{content}"></textarea>
+	        <div style="display:flex; justify-content:end;">
+	        <input type="submit" value="댓글등록" class="btn btn-success my-2">
+	        </div>
+	    </form>
+		
+		
+		</div>
+		</div>
 	
 	</div>
-	</div>
-
-</div>
 
 <script layout:fragment="script" type='text/javascript'>
 
@@ -191,5 +191,7 @@ Array.from(delete_elements).forEach(function(element) {
 });
 
 </script>
-
+</div>
+</div>
+</div>
 </html>
