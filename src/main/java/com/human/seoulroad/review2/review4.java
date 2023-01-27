@@ -1,4 +1,4 @@
-package com.human.seoulroad.review;
+package com.human.seoulroad.review2;
 
 import java.time.LocalDateTime;
 
@@ -14,24 +14,24 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "REVIEW_LIST")
-public class review {
+@Table(name = "REVIEW_LIST4")
+public class review4 {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer sortnum;
+	private Integer sortnum4;
 	
 	@Column
-	private String id;
+	private String id4;
 
 	@Column
-	private String reviewContents;
+	private String reviewContents4;
 	
 	@Column
-	private String reviewStar;
+	private String reviewStar4;
 	
 	
-	private LocalDateTime createDate;
+	private LocalDateTime createDate4;
 
 }
 

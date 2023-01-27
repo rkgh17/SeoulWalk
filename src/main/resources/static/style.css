@@ -27,6 +27,11 @@
 }
 
 /*임여명*/
+.lay{ 
+	border:solid black 1px;
+	z-index: 1;
+}
+
 p{
 	font-size:15px;
 	line-height: 1px;
@@ -318,7 +323,7 @@ th, td {
 	align-self: start;
 	position : sticky;
 	position : -webkit-sticky;
-	top : 30px;
+	top : 100px;
 	
 	
 }

@@ -78,7 +78,7 @@ table, tr, td {
 				</div><br>
 					<div class="rcm-content03">
 						<div class="SceneryImg">
-							<div class="swiper-container">
+							<div style="border:solid black 1px;" class="swiper-container">
 								<div class="swiper-wrapper">
 									
 										<div class="swiper-slide"><img  th:src="@{/img/rcmcourse/rcmCouple/하늘공원1.jpg}"   /></div>
@@ -95,69 +95,10 @@ table, tr, td {
 								<div class="swiper-pagination"></div>
 							</div>
 
-	---------------------------------------------------------------------------------------------
-	
-	<hr>
-	
-			<div class="container my-3">
-		 	<table class="table" style="border-left: none; border-right: none;">
-		    <thead>
-		        <tr>
-		            <th style="width: 80px;">평점</th>
-		            <th style="width: 120px;">닉네임</th>
-		            <th>내용</th>
-		            <th style="width: 150px;">작성일자</th>
-		        </tr>
-		    </thead>
-		    <tbody>
-		        <tr th:each="review, loop : ${paging}">
-		            <td style="width: 80px;" th:text="${review.reviewStar}"></td>
-		            <td style="width: 120px;" th:text="${review.id}"></td>
-		            <td th:text="${review.reviewContents}"></td>
-		            <td style="width: 150px;" th:text="${#temporals.format(review.createDate, 'yyyy-MM-dd HH:mm')}"></td>
-		        </tr>
-		    </tbody>
-			</table>
-			    <!-- 페이징처리 시작 -->
-		    <div th:if="${!paging.isEmpty()}">
-		        <ul class="pagination justify-content-center">
-		            <li class="page-item" th:classappend="${!paging.hasPrevious} ? 'disabled'">
-		                <a class="page-link"
-		                    th:href="@{|?page=${paging.number-1}|}"  return false;>
-		                    <span>이전</span>
-		                </a>
-		            </li>
-		            
-		
-		            
-		            <li th:each="page: ${#numbers.sequence(0, paging.totalPages-1)}"
-		            	th:if="${page >= paging.number-2 and page <= paging.number+2}"
-		                th:classappend="${page == paging.number} ? 'active'" 
-		                class="page-item">
-		                <a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}" return false;></a>
-		            </li>
-		            <li class="page-item" th:classappend="${!paging.hasNext} ? 'disabled'">
-		                <a class="page-link" th:href="@{|?page=${paging.number+1}|}" return false;>
-		                    <span>다음</span>
-		                </a>
-		            </li>
-		        </ul>
-		    </div>
-		    <!-- 페이징처리 끝 -->
-			<a th:href="@{/recommendcourse/create}" class="btn btn-secondary">후기등록</a>
-			
-			
-			<br><hr>
-	
-	
-	
-	-----------------------------------------------------------------------------------------
 
-							
-														
-				</div>
-
-
+	
+						<div class="container my-3">					
+						</div>
 						</div>
 						
 						<a  href="javascript:GetShow()"style="text-decoration: none; color: black;" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 설명보기</a>
@@ -184,6 +125,61 @@ table, tr, td {
 							</div>
 			
 						
+
+
+					</div>
+					
+					
+			<hr>
+	<div class="container my-3">
+	<table class="table" style="border-left: none; border-right: none;">
+    <thead>
+        <tr>
+            <th style="width: 80px;">별점</th>
+            <th style="width: 120px;">닉네임</th>
+            <th>후기</th>
+        	<th style="width: 150px;">작성일자</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="review2, loop : ${paging2}">
+		    <td style="width: 80px;" th:text="${review2.reviewStar2}"></td>
+            <td style="width: 120px;" th:text="${review2.id2}"></td>
+            <td th:text="${review2.reviewContents2}"></td>
+            <td style="width: 150px;" th:text="${#temporals.format(review2.createDate2, 'yyyy-MM-dd HH:mm')}"></td>
+        </tr>
+    </tbody>
+	</table>
+    <!-- 페이징처리 시작 -->
+    <div th:if="${!paging2.isEmpty()}">
+        <ul class="pagination justify-content-center">
+            <li class="page-item" th:classappend="${!paging2.hasPrevious} ? 'disabled'">
+                <a class="page-link"
+                    th:href="@{|?page=${paging2.number-1}|}">
+                    <span>이전</span>
+                </a>
+            </li>
+            <li th:each="page: ${#numbers.sequence(0, paging2.totalPages-1)}"
+            	th:if="${page >= paging2.number-2 and page <= paging2.number+2}"
+                th:classappend="${page == paging2.number} ? 'active'" 
+                class="page-item">
+                <a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>
+            </li>
+            <li class="page-item" th:classappend="${!paging2.hasNext} ? 'disabled'">
+                <a class="page-link" th:href="@{|?page=${paging2.number+1}|}">
+                    <span>다음</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 페이징처리 끝 -->
+	<a th:href="@{/recommendcourse/create2}" class="btn btn-secondary">후기등록</a>
+	</div>
+	
+	<br><br><br><br>
+					
+
 					
 
 				</div><hr><br>
@@ -196,7 +192,7 @@ table, tr, td {
 				</div><br>
 					<div class="rcm-content03">
 						<div class="SceneryImg">
-							<div class="swiper-container">
+							<div style="border:solid black 1px;" class="swiper-container">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmCouple/안양천1.jpg}"  /></div>
 									<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmCouple/안양천2.jpg}"  /></div>
@@ -231,13 +227,67 @@ table, tr, td {
 						<div>
 							◾ 난이도 : 초급
 						</div>						
-							
-
-
 
 						
 					</div>
-				</div><hr><br>
+					
+					
+			<hr>
+<div class="container my-3">
+	<table class="table" style="border-left: none; border-right: none;">
+    <thead>
+        <tr>
+            <th style="width: 80px;">별점</th>
+            <th style="width: 120px;">닉네임</th>
+            <th>후기</th>
+        	<th style="width: 150px;">작성일자</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="review3, loop : ${paging3}">
+		    <td style="width: 80px;" th:text="${review3.reviewStar3}"></td>
+            <td style="width: 120px;" th:text="${review3.id3}"></td>
+            <td th:text="${review3.reviewContents3}"></td>
+            <td style="width: 150px;" th:text="${#temporals.format(review3.createDate3, 'yyyy-MM-dd HH:mm')}"></td>
+        </tr>
+    </tbody>
+	</table>
+    <!-- 페이징처리 시작 -->
+    <div th:if="${!paging3.isEmpty()}">
+        <ul class="pagination justify-content-center">
+            <li class="page-item" th:classappend="${!paging3.hasPrevious} ? 'disabled'">
+                <a class="page-link"
+                    th:href="@{|?page=${paging3.number-1}|}">
+                    <span>이전</span>
+                </a>
+            </li>
+            <li th:each="page: ${#numbers.sequence(0, paging3.totalPages-1)}"
+            	th:if="${page >= paging3.number-2 and page <= paging3.number+2}"
+                th:classappend="${page == paging3.number} ? 'active'" 
+                class="page-item">
+                <a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>
+            </li>
+            <li class="page-item" th:classappend="${!paging3.hasNext} ? 'disabled'">
+                <a class="page-link" th:href="@{|?page=${paging3.number+1}|}">
+                    <span>다음</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 페이징처리 끝 -->
+	<a th:href="@{/recommendcourse/create3}" class="btn btn-secondary">후기등록</a>
+	</div>
+	
+	<br><br><br><br>
+				
+				
+				
+				
+			
+				
+				
+				
 				
 				<div class="rcm-boxalign">
 				<div class="rcm-content02">
@@ -287,10 +337,60 @@ table, tr, td {
 						
 						
 					</div>
+					
+					
+					<hr>
+<div class="container my-3">
+	<table class="table" style="border-left: none; border-right: none;">
+    <thead>
+        <tr>
+            <th style="width: 80px;">별점</th>
+            <th style="width: 120px;">닉네임</th>
+            <th>후기</th>
+        	<th style="width: 150px;">작성일자</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="review4, loop : ${paging4}">
+		    <td style="width: 80px;" th:text="${review4.reviewStar4}"></td>
+            <td style="width: 120px;" th:text="${review4.id4}"></td>
+            <td th:text="${review4.reviewContents4}"></td>
+            <td style="width: 150px;" th:text="${#temporals.format(review4.createDate4, 'yyyy-MM-dd HH:mm')}"></td>
+        </tr>
+    </tbody>
+	</table>
+    <!-- 페이징처리 시작 -->
+    <div th:if="${!paging4.isEmpty()}">
+        <ul class="pagination justify-content-center">
+            <li class="page-item" th:classappend="${!paging4.hasPrevious} ? 'disabled'">
+                <a class="page-link"
+                    th:href="@{|?page=${paging4.number-1}|}">
+                    <span>이전</span>
+                </a>
+            </li>
+            <li th:each="page: ${#numbers.sequence(0, paging4.totalPages-1)}"
+          		th:if="${page >= paging4.number-2 and page <= paging4.number+2}"
+                th:classappend="${page == paging4.number} ? 'active'" 
+                class="page-item">
+                <a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>
+            </li>
+            <li class="page-item" th:classappend="${!paging4.hasNext} ? 'disabled'">
+                <a class="page-link" th:href="@{|?page=${paging4.number+1}|}">
+                    <span>다음</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 페이징처리 끝 -->
+	<a th:href="@{/recommendcourse/create4}" class="btn btn-secondary">후기등록</a>
+	</div>
+					
+					
 				</div><hr><br>
 			
 				
-			
+		
 			</div>
 		</div>
 	</div>
