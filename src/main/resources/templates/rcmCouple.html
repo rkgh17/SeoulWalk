@@ -3,6 +3,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script th:inline="javascript">
+function ajaxpage(page){
+	$.ajax({
+		type : "GET",
+		url : 'couple?page2=' + page,
+		data : page,
+		datatype:"text",
+		success:function(result){
+			$('#replace').load("couple?page2=" + page + " #rpcontent");
+		}
+	});
+}
+</script>
 <style>
 .swiper-container {
 	width: 710px;
@@ -19,9 +32,6 @@
 .swiper-slide img {
 	box-shadow:0 0 5px #555;
 	max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
-	
-	
-
 }
 
 .page-link {
@@ -118,15 +128,14 @@ table, tr, td {
 						<div>
 							◾ 난이도 : 초급
 						</div>
-						
-							
-						
+
 					</div>
+			
 					
 				
 						<hr>
-				<div class="container my-3">
-				<table class="table" style="border-left: none; border-right: none;">
+				<div class="container my-3" id="replace">
+				<table class="table" style="border-left: none; border-right: none;" id="rpcontent">
 					
 			    <thead>
 			        <tr>
@@ -147,12 +156,12 @@ table, tr, td {
 			    </tbody>
 				</table>
 			    <!-- 페이징처리 시작 -->
-			    <div th:if="${!paging2.isEmpty()}">
+			    <div id="rpcontent" th:if="${!paging2.isEmpty()}">
 					
 			        <ul class="pagination justify-content-center">
 			            <li class="page-item" th:classappend="${!paging2.hasPrevious} ? 'disabled'">
 			                <a class="page-link"
-			                    th:href="@{|?page2=${paging2.number-1}#div1|}">
+			                    th:href="|javascript:ajaxpage('${paging2.number -1}')|">
 			                    <span>이전</span>
 			                </a>
 			            </li>
@@ -160,19 +169,19 @@ table, tr, td {
 			            	th:if="${page2 >= paging2.number-2 and page2 <= paging2.number+2}"
 			                th:classappend="${page2 == paging2.number} ? 'active'" 
 			                class="page-item">
-			                <a th:text="${page2}" class="page-link" th:href="@{|?page2=${page2}#div1|}"></a>
+			                <a th:text="${page2}" class="page-link" id="ajaxt" th:href="|javascript:ajaxpage('${page2}')|"></a>
 			               
 			               
 			            </li>
 			            <li class="page-item" th:classappend="${!paging2.hasNext} ? 'disabled'">
-			                <a class="page-link" th:href="@{|?page2=${paging2.number+1}#div1|}">
+			                <a class="page-link" th:href="|javascript:ajaxpage('${paging2.number +1}')|">
 			                    <span>다음</span>
 			                </a>
 			            </li>
 			        </ul>
 			    </div>
 			    <!-- 페이징처리 끝 -->
-				<a th:href="@{/recommendcourse/create2}" class="btn btn-secondary">후기등록</a>
+				<a id="rpcontent" th:href="@{/recommendcourse/create2}" class="btn btn-secondary">후기등록</a>
 				</div>
 
 				</div><hr><br>
@@ -223,7 +232,6 @@ table, tr, td {
 						</div>						
 						
 					</div>
-					
 					
 						<hr>
 			<div class="container my-3">

@@ -40,6 +40,7 @@ public class reviewController2 {
         
         Page<review4> paging4 = this.reviewService4.getList(page4);
         model.addAttribute("paging4", paging4);
+        
         return "rcmCouple";
         
     }
