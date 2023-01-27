@@ -28,8 +28,7 @@
 
 /*임여명*/
 .lay{ 
-	border:solid black 1px;
-	z-index: 1;
+	
 }
 
 p{
@@ -169,6 +168,14 @@ p{
 	 margin-right:auto;
 	 text-align: center;	 
 }
+.courseTable02{
+	 border: 3px solid darkgray;
+	 width: 900px;
+	 height: 200px;
+	 margin-left:auto;
+	 margin-right:auto;
+	 text-align: center;	 
+}
 th, td {
     border: 1px solid darkgray;
 
@@ -256,7 +263,7 @@ th, td {
 	 border-radius: 5%
 }
 .faq-box-content{
-	border:solid black 1px;
+	
 	margin:5px;
 }
 /* course1.html ~ course8.html */
@@ -366,7 +373,7 @@ th, td {
 .rcm-textTitle {
 	font-weight:900;
 	font-size:25px;
-
+	margin-top: 75px;
 }
 /*추가(임여명)*/
 

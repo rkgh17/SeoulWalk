@@ -22,7 +22,7 @@ import com.human.seoulroad.user.SiteUser;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
-@RequestMapping("/answer") // URL 프리픽스
+@RequestMapping("answer") // URL 프리픽스
 @RequiredArgsConstructor
 @Controller
 public class AnswerController {

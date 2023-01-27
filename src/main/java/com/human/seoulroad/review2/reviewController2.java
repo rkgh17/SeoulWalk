@@ -16,7 +16,7 @@ import com.human.seoulroad.user.CustomOAuth2UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
-@RequestMapping("/recommendcourse")
+@RequestMapping("recommendcourse")
 @RequiredArgsConstructor
 @Controller
 public class reviewController2 {
@@ -28,14 +28,17 @@ public class reviewController2 {
 	private final reviewService4 reviewService4;
 
     @GetMapping("/couple")
-    public String list(Model model, @RequestParam(value="page", defaultValue="0") int page) {
-        Page<review2> paging2 = this.reviewService2.getList(page);
+    public String list(Model model, @RequestParam(value="page2", defaultValue="0") int page2,
+						    		@RequestParam(value="page3", defaultValue="0") int page3,
+						    		@RequestParam(value="page4", defaultValue="0") int page4)
+    {
+        Page<review2> paging2 = this.reviewService2.getList(page2);
         model.addAttribute("paging2", paging2);
         
-        Page<review3> paging3 = this.reviewService3.getList(page);
+        Page<review3> paging3 = this.reviewService3.getList(page3);
         model.addAttribute("paging3", paging3);
         
-        Page<review4> paging4 = this.reviewService4.getList(page);
+        Page<review4> paging4 = this.reviewService4.getList(page4);
         model.addAttribute("paging4", paging4);
         return "rcmCouple";
         
