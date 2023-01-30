@@ -33,7 +33,7 @@
 		<ul class="dropdown-menu">
 			<li><a class="dropdown-item py-3 fs-4" th:href="@{/introduce}">둘레길 안내</a></li>
 			<li><a class="dropdown-item py-3 fs-4" th:href="@{/course}">둘레길 코스</a></li>
-			<li><a class="dropdown-item py-3 fs-4" th:href="@{/recommendcourse}">둘레길 추천코스</a></li>
+			<li><a class="dropdown-item py-3 fs-4" th:href="@{/recommendcourse/couple}">둘레길 추천코스</a></li>
 			<li><a class="dropdown-item py-3 fs-4" th:href="@{/other}">그밖의 길</a></li>
 			<li><a class="dropdown-item py-3 fs-4" th:href="@{/board/notice}">소통 게시판</a></li>
 			<li><a class="dropdown-item py-3 fs-4" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a></li>
@@ -47,7 +47,7 @@
 </div>
 
 
-<th:block style="padding-top:140px; z-index:-1" layout:fragment="content"></th:block>
+<th:block style="padding-top:100px; z-index:-1" layout:fragment="content"></th:block>
 
 
 </body>

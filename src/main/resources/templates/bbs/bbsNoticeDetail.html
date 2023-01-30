@@ -3,7 +3,8 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/bbs.css}">
 </head>
 <div layout:fragment="content" class="container my-5">
-<h1 style="padding-top:15px; padding-bottom:15px;">공지사항</h1>
+<div style = "padding-top:50px;">
+<h1 style="padding-top:15px; padding-bottom:15px; padding-left:15px;">공지사항</h1>
 <hr>
 
 <div class="bbscontent">
@@ -59,7 +60,7 @@
     </table>
 
     
-    <span class="d-flex justify-content-between" style="margin-right:16px;">
+    <span class="d-flex justify-content-between" >
     	
     	<!-- 수정일 표시 -->
     	<span>
@@ -114,5 +115,6 @@ Array.from(delete_elements).forEach(function(element) {
 });
 
 </script>
-
+</div>
+</div>
 </html>
