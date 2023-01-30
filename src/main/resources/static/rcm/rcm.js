@@ -35,17 +35,34 @@ new Swiper('.swiper-container', {
 	},
 });
 
+
+
 function GetShow(){	 // 설명 자세히
+		
 		var con = document.getElementById("hide");
+		
 		if(con.style.display == "none"){
 			con.style.display = "block"; 
 		}
 		else{
 			con.style.display = "none"
 		}
-	}
+}
+
+
+function Getshow(){	 // 설명 자세히
+		var con = document.getElementById("hide2");
+		
+		if(con.style.display == "none"){
+			con.style.display = "block"; 
+		}
+		else{
+			con.style.display = "none"
+		}
+}
+
 	
-	function getShow(){	 // 코스 정보 자세히
+function getShow(){	 // 코스 정보 자세히
 		var con = document.getElementById("hide1");
 		if(con.style.display == "none"){
 			con.style.display = "block"; 
@@ -55,15 +72,6 @@ function GetShow(){	 // 설명 자세히
 		}
 	}
 	
-function Getshow(){	 // 설명 자세히
-		var con = document.getElementById("hide2");
-		if(con.style.display == "none"){
-			con.style.display = "block"; 
-		}
-		else{
-			con.style.display = "none"
-		}
-	}
 	
 	function getshow(){	 // 코스 정보 자세히
 		var con = document.getElementById("hide3");
