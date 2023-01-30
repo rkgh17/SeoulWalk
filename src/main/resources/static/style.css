@@ -10,6 +10,17 @@
   font-family: "SUIT-Regular";
 }
 
+
+
+/* 메인상단바 */
+@media(max-width:500px){
+	.lay{
+		max-width:100%;
+	}
+}
+
+
+
 /* 네비게이션 바 */
 .nav-link{
 	color:white;
@@ -26,10 +37,7 @@
 	margin-right: 50px;
 }
 
-/*임여명*/
-.lay{ 
-	
-}
+
 
 p{
 	font-size:15px;
@@ -44,9 +52,6 @@ p{
 .hightemp{
 	font-size:12px;
 	line-height: 1px;
-}
- .SceneryImg {
-        text-align: center;
 }
 .layout{
     max-width: 600px;
@@ -113,14 +118,20 @@ p{
 	margin-right:auto;
     background-repeat: no-repeat;
 }
- .mainPage {
+
+.maintitle{
+	font-weight:bold;
+	font-size:45px; 
+	padding-bottom:120px;
+}
+.mainPage {
     box-sizing: border-box;   
      display: flex;
      flex-direction: row;
      justify-content: space-around;
      align-items: center;
 }
- .mainPage02 {
+.mainPage02 {
      box-sizing: border-box;   
      display: flex;
      flex-direction: row;
@@ -128,14 +139,14 @@ p{
      align-items: center;
      margin-bottom: 20px;
 }
- .mainPage03 {
+.mainPage03 {
     box-sizing: border-box;   
      display: flex;
      flex-direction: row;
      justify-content:flex-start;
      padding-left: 37%;
 }
- .alignment {
+.alignment {
      text-indent: 37%;
 }
 
@@ -266,9 +277,6 @@ th, td {
 	
 	margin:5px;
 }
-/* course1.html ~ course8.html */
-
-/*임여명*/
 
 /* 메인화면 */
 .maincourse{
@@ -304,94 +312,4 @@ th, td {
 
 .login-out:hover{
 	color : darkgrey;
-}
-
-
-/* 추천코스 영역 */
-.rcmcontainer{
-	padding:100px;
-	display:flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	margin-top:100px;
-	
-}
-/*추가(임여명)*/
-/*커플코스*/
-.rcm-area{
-	width: 100%;
-	/*border:solid black 1px;*/
-}
-.rcm-side{
-	flex-basis: 10%;
-	height:220px;
-	/*border:solid black 1px;*/
-	margin:15px;
-	align-self: start;
-	position : sticky;
-	position : -webkit-sticky;
-	top : 100px;
-	
-	
-}
-
-.rcm-side02{
-	text-align: center;
-	font-size:20px;
-
-
-	height:40px;
-}
-
-.rcm-content{
-	flex-basis: 90%;
-	/*border:solid black 1px;*/
-	margin:5px;
-}
-.rcm-content02{
-	text-align: center;
-}
-.rcm-content03{
-	width: 675px;
-	
-}
-
- .rcm-area02 {
-    box-sizing: border-box;   
-     		display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-}
- .rcm-boxalign {
-    box-sizing: border-box;   
-     display: flex;
-     flex-direction: column;
-     justify-content: space-around;
-     align-items: center;
-}
-.rcm-textTitle {
-	font-weight:900;
-	font-size:25px;
-	margin-top: 75px;
-}
-/*추가(임여명)*/
-
-.rcmcard{
-	width: 45%;
-	margin-bottom:100px;
-	display:flex;
-	justify-content: center;
-	flex-flow: column;
-	text-align: center;
-}
-.rcmcardimg{
-	margin:0px;
-	border-radius:15%;
-	cursor:pointer;
-}
-.rcmdardtitle{
-	font-size: 2.7vw;
-	margin-bottom: 25px;
-	margin-right: 18px;
 }
