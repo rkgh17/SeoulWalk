@@ -10,6 +10,17 @@
   font-family: "SUIT-Regular";
 }
 
+
+
+/* 메인상단바 */
+@media(max-width:500px){
+	.lay{
+		max-width:360px;
+	}
+}
+
+
+
 /* 네비게이션 바 */
 .nav-link{
 	color:white;
@@ -26,10 +37,7 @@
 	margin-right: 50px;
 }
 
-/*임여명*/
-.lay{ 
-	
-}
+
 
 p{
 	font-size:15px;
@@ -110,14 +118,20 @@ p{
 	margin-right:auto;
     background-repeat: no-repeat;
 }
- .mainPage {
+
+.maintitle{
+	font-weight:bold;
+	font-size:45px; 
+	padding-bottom:120px;
+}
+.mainPage {
     box-sizing: border-box;   
      display: flex;
      flex-direction: row;
      justify-content: space-around;
      align-items: center;
 }
- .mainPage02 {
+.mainPage02 {
      box-sizing: border-box;   
      display: flex;
      flex-direction: row;
@@ -125,14 +139,14 @@ p{
      align-items: center;
      margin-bottom: 20px;
 }
- .mainPage03 {
+.mainPage03 {
     box-sizing: border-box;   
      display: flex;
      flex-direction: row;
      justify-content:flex-start;
      padding-left: 37%;
 }
- .alignment {
+.alignment {
      text-indent: 37%;
 }
 

@@ -154,3 +154,27 @@ table, tr, td {
 .hidecontent{
 	display: none;
 }
+
+
+
+@media(max-width: 500px){
+	.rcmnav{
+		font-size:12px;
+	}
+	.rcmarea{
+		width:360px;
+	}
+	.rcm-content{
+		width:305px;
+	}
+	.rcm-content03{
+		width:305px;
+	}	
+	.swiper-container{
+		width:290px;
+	}
+	.table th, tr, td{
+		width:auto;
+		font-size:11px;
+	}
+}

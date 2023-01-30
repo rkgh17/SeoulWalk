@@ -3,22 +3,22 @@
 <link rel="stylesheet" type="text/css" th:href="@{/rcm/rcm.css}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
-<div layout:fragment="content" class="container my-5">
+<div layout:fragment="content">
 
 <div class="rcm-area">
-	<h1 style="padding-top:15px; padding-bottom:15px;">추천코스 - 커플코스</h1>
+	<h1 style="padding-left:15px; padding-top:60px;">추천코스 - 커플코스</h1>
 	<hr>
 	
 	<div class="rcm-area02">
 		<div class="rcm-side">
 			<div class="rcm-side02">
-				<div style="cursor:pointer;" onClick="location.href='/recommendcourse/couple'">커플코스</div><hr>
-				<div style="cursor:pointer;" onClick="location.href='/recommendcourse/family'">가족코스</div><hr>
-				<div style="cursor:pointer;" onClick="location.href='/recommendcourse/restaurant'">맛집코스</div><hr>
-				<div style="cursor:pointer;" onClick="location.href='/recommendcourse/nature'">자연코스</div>
+				<div class="rcmnav" style="cursor:pointer;" onClick="location.href='/recommendcourse/couple'">커플코스</div><hr>
+				<div class="rcmnav" style="cursor:pointer;" onClick="location.href='/recommendcourse/family'">가족코스</div><hr>
+				<div class="rcmnav" style="cursor:pointer;" onClick="location.href='/recommendcourse/restaurant'">맛집코스</div><hr>
+				<div class="rcmnav" style="cursor:pointer;" onClick="location.href='/recommendcourse/nature'">자연코스</div>
 			</div>
 		</div>
 		
@@ -39,7 +39,7 @@
 										<div class="swiper-slide"><img  th:src="@{/img/rcmcourse/rcmCouple/하늘공원1.jpg}"   /></div>
 										<div class="swiper-slide"><img  th:src="@{/img/rcmcourse/rcmCouple/하늘공원2.jpg}"  /></div>
 										<div class="swiper-slide"><img  th:src="@{/img/rcmcourse/rcmCouple/하늘공원3.jpg}"  /></div>
-										<div class="swiper-slide"><img th:src="@{/img/rcmcourse/rcmCouple/하늘공원4.jpg}"  /></div>
+										<div class="swiper-slide"><img  th:src="@{/img/rcmcourse/rcmCouple/하늘공원4.jpg}"  /></div>
 										<div class="swiper-slide"><img  th:src="@{/img/rcmcourse/rcmCouple/하늘공원5.jpg}"  /></div>
 									
 								</div>
@@ -60,7 +60,7 @@
 							<a href="javascript:GetShow()" class="rcm-c" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">
 							추천 코스 경로 보기</a>
 							<div id="hide" class="hidecontent">
-								<img th:src="@{/img/rcmcourse/rcmDetail/c1.png}"/>
+								<img style="max-width:100%;" th:src="@{/img/rcmcourse/rcmDetail/c1.png}"/>
 							</div>
 						</div>
 						
