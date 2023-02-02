@@ -1,8 +1,15 @@
 
 <html layout:decorate="~{layout}">
-
 <div layout:fragment="content" class="container my-5">
-	
+
+<style>
+
+.SceneryImg{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+</style>
 	<div style="margin-top:50px;">
 		<div class="introduceTitle">서울 둘레길은?</div><br><br><hr>
 		<div>서울을 한 바퀴 휘감는 총 연장 156.5km의 서울둘레길은 8개 코스로 서울의 역사, 문화, 자연생태 등을 스토리로 엮어 국내외 탐방객들이 느끼고, 배우고, 체험할 수 있도록 조성한 도보길입니다.</div>
@@ -18,42 +25,50 @@
 				<p>사람을 위한 길, 자연을 위한 길, 산책하는 길, 이야기가 있는 길</p><hr>
 			</div>
 			<div class="content2">
-				<div>
+				<div class="SceneryImg">					
 					<h5 class="subtitle">사람을 위한 길</h5>
 					<img th:src="@{/img/2.jpg}" /><br><br>
-					<p class="content">• 경사가 심하지 않은 길</p>
-					<p class="content">• 안전하고 편안하고 쾌적한 길(노면정비, 안전난간 등)</p>
-					<p class="content">• 건강과 휴양을 도모하는 길(양호한 숲, 산림욕장 등 경유)</p>
-					<p class="content">• 주택가로부터 200m 이상 떨어진 길(주변주민 생활불편 예방)</p>
-					<br>
-				</div>
-				<div>
+						<div class="au">
+							<p class="content">• 경사가 심하지 않은 길</p>
+							<p class="content">• 안전하고 편안하고 쾌적한 길(노면정비, 안전난간 등)</p>
+							<p class="content">• 건강과 휴양을 도모하는 길(양호한 숲, 산림욕장 등 경유)</p>
+							<p class="content">• 주택가로부터 200m 이상 떨어진 길(주변주민 생활불편 예방)</p>
+							<br>
+						</div>
+					</div>
+				<div class="SceneryImg">
 					<h5 class="subtitle">자연을 위한 길(숲으로 숲을 치유)</h5>
 					<img th:src="@{/img/3.jpg}" /><br><br>
-					<p class="content">• 가능한 기존 등산로만 연결하여 흙길로 조성</p>
-					<p class="content">• 사용하지 않는 샛길은 적극적인 폐쇄, 훼손된 등산로 복원</p>
-					<p class="content">• 수목 식재 필요할 경우 해당지역 자생 산림수종 선정</p>
-					<p class="content">• 콘크리트·철제·방부목재·로프 사용 지양, 현장소재 활용</p>
-					<P class="content">&nbsp;&nbsp;(쓰러진 아까시나무 활용)</P>
+						<div class="au">
+							<p class="content">• 가능한 기존 등산로만 연결하여 흙길로 조성</p>
+							<p class="content">• 사용하지 않는 샛길은 적극적인 폐쇄, 훼손된 등산로 복원</p>
+							<p class="content">• 수목 식재 필요할 경우 해당지역 자생 산림수종 선정</p>
+							<p class="content">• 콘크리트·철제·방부목재·로프 사용 지양, 현장소재 활용</p>
+							<P class="content">&nbsp;&nbsp;(쓰러진 아까시나무 활용)</P>
+						</div>
 				</div>
 			</div>
 			<br>
 			<div class="content2">
-				<div>
+				<div class="SceneryImg">
 					<h5 class="subtitle">산책하는 길</h5>
 					<img th:src="@{/img/4.jpg}" /><br><br>
-					<p class="content">• 가능한 수평, 옆으로 걷는 자락길, 산책길</p>
-					<p class="content">• 불필요한 계단설치 최대한 배제</p>
-					<p class="content">• 만나고, 산책하고, 소통하고, 휴식하는 길</p>
-					<p class="content">&nbsp;&nbsp;(숲속 북카페, 숲이 좋은 곳에 휴게시설, 전망 좋은 곳에 쉼터)</p>
+						<div class="au">
+							<p class="content">• 가능한 수평, 옆으로 걷는 자락길, 산책길</p>
+							<p class="content">• 불필요한 계단설치 최대한 배제</p>
+							<p class="content">• 만나고, 산책하고, 소통하고, 휴식하는 길</p>
+							<p class="content">&nbsp;&nbsp;(숲속 북카페, 숲이 좋은 곳에 휴게시설, 전망 좋은 곳에 쉼터)</p>
+						</div>
 				</div>
-				<div>
+				<div class="SceneryImg">
 					<h5 class="subtitle">이야기가 있는 길</h5>
 					<img th:src="@{/img/5.jpg}" /><br><br>
-					<p class="content">• 자연과 역사와 문화를 배우고 느낄 수 있는 길</p>
-					<p class="content">• (전통 깊은 사찰, 유적지, 문화유산, 역사유물 등 경유)</p>
-					<p class="content">&nbsp;&nbsp;둘레길에 숨겨져 있는 전설, 이야기 등 발굴</p>
+					<div class="au">
+						<p class="content">• 자연과 역사와 문화를 배우고 느낄 수 있는 길</p>
+						<p class="content">• (전통 깊은 사찰, 유적지, 문화유산, 역사유물 등 경유)</p>
+						<p class="content">&nbsp;&nbsp;둘레길에 숨겨져 있는 전설, 이야기 등 발굴</p>
 					<br>
+					</div>
 				</div>
 			</div>
 			<br><br><br><br>
@@ -71,7 +86,7 @@
 					<br><br><br><br><br><br><br><br>
 				</div>
 				<div>
-					<img th:src="@{/img/new2021_map.jpg}" />
+					<img class="ai" th:src="@{/img/new2021_map.jpg}" />
 				</div>
 			</div>
 		
@@ -85,7 +100,7 @@
 	                <label for="qna-1">서울에는 몇 개의 둘레길 코스가 있나요?</label>
 	                <div>
 						<br>
-	                    <p class="a">서울에는 총 8개의 둘레길 코스가 있습니다. 코스별 거리와 소요시간, 난이도 등 자세한 사항은 아래 링크에서 확인할 수 있습니다.</p><br>
+	                    <span>서울에는 총 8개의 둘레길 코스가 있습니다. 코스별 거리와 소요시간, 난이도 등 자세한 사항은 아래 링크에서 확인할 수 있습니다.</span><br><br>
 	                    <a th:href="@{course}">서울 둘레길 코스 정보 알아보기</a>
 	                </div>
 	            </li>
@@ -107,7 +122,7 @@
 	                <label for="qna-3">서울 둘레길 완주인증서는 어디서 발급받을 수 있나요?</label>
 	                <div>
 						<br>
-	                    <p>서울 둘레길 완주인증서는 '서울둘레길 창포원 안내센터'와 '서울둘레길 양재 안내센터'에서 발급받을 수 있습니다. (2022년 기준)</p>
+	                    <span>서울 둘레길 완주인증서는 '서울둘레길 창포원 안내센터'와 '서울둘레길 양재 안내센터'에서 발급받을 수 있습니다. (2022년 기준)</span>
 	                </div>
 	            </li>
 	        </ul>

@@ -313,3 +313,44 @@ th, td {
 .login-out:hover{
 	color : darkgrey;
 }
+/*모바일 환경 추가*/
+@media (max-width:500px){
+	.au{
+		width: 100%;
+		margin-left: -12px;
+		text-align: left;		
+	}
+	.content2{
+		max-width: 100%;
+		overflow: auto;
+	}
+	.SceneryImg{
+		max-width: 100%;
+	}
+	img{
+		max-width: 100%;
+		width: auto;
+		height: auto;	
+	}	
+	p{
+		font-size: 78%
+	}
+	.subtitle{
+		font-size: 11px;
+	}
+	.content{
+		font-size: 7px;
+		letter-spacing:0.1px;
+	}
+	.bi{
+		font-size: 3px;
+	}
+	span{
+		font-size: 78%;
+	}
+	.ai{
+		margin-bottom: 200px;
+	}
+}
+
+
