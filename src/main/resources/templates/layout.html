@@ -37,7 +37,7 @@
 			<li><a class="dropdown-item py-3 fs-4" th:href="@{/other}">그밖의 길</a></li>
 			<li><a class="dropdown-item py-3 fs-4" th:href="@{/board/notice}">소통 게시판</a></li>
 			<li><a class="dropdown-item py-3 fs-4" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a></li>
-	    	<li><a class="dropdown-item py-3 fs-4" sec:authorize="isAuthenticated()" href="/logout">로그아웃</a></li>
+	    	<li><a class="dropdown-item py-3 fs-4" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a></li>
 		</ul>
 	</div>
 

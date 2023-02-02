@@ -32,6 +32,8 @@ public class SecurityConfig{
 	@Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.csrf().disable();
+		
+		
         http.authorizeHttpRequests().requestMatchers(
                 new AntPathRequestMatcher("/**")).permitAll()
         
@@ -45,6 +47,7 @@ public class SecurityConfig{
                 	
                 .and()
                 	.logout()
+                	.logoutUrl("/user/logout")
                 	.logoutSuccessUrl("/")
                 	.invalidateHttpSession(true)
         		.and()
