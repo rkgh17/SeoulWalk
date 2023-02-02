@@ -2,11 +2,14 @@ package com.human.seoulroad.review2;
 
 import java.time.LocalDateTime;
 
+import com.human.seoulroad.user.SiteUser;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,6 +35,11 @@ public class review2 {
 	
 	
 	private LocalDateTime createDate2;
-
+	
+	
+    @ManyToOne
+    private SiteUser author;    
+    
+	
 }
 

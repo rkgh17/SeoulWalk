@@ -149,6 +149,9 @@ p{
 .alignment {
      text-indent: 37%;
 }
+.alignment02 {
+     text-align: center;
+}
 
 .introduceTitle{
 	font-weight:900;
@@ -187,6 +190,12 @@ p{
 	 margin-right:auto;
 	 text-align: center;	 
 }
+@media(max-width:1000px){
+	.courseTable02{
+		max-width:100%;
+	}
+}
+
 th, td {
     border: 1px solid darkgray;
 
