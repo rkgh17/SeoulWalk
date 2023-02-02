@@ -21,17 +21,9 @@
 				<div class="rcmnav" style="cursor:pointer;" onClick="location.href='/recommendcourse/nature'">자연코스</div>
 			</div>
 		</div>
-
 		
 		<div class="rcm-content">
 				<div class="rcm-boxalign">
-
-				<div class="rcm-content02" id="c1">
-					<div class="rcm-textTitle">
-						하늘공원1
-					</div>
-				</div><br>
-
 				
 					<div class="rcm-content02" id="c1">
 						<div class="rcm-textTitle">
@@ -39,7 +31,6 @@
 						</div>
 					</div><br>
 					
-
 					<div class="rcm-content03">
 						<div class="SceneryImg">
 							<div class="swiper-container">
@@ -72,151 +63,10 @@
 								<img style="max-width:100%;" th:src="@{/img/rcmcourse/rcmDetail/c1.png}"/>
 							</div>
 						</div>
-
-
-
-						<div id="div1"></div>
-
-						<a  href="javascript:GetShow()"style="text-decoration: none; color: black;" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 설명보기</a>
-						<div>
-							
-						</div>
-						<div id="hide" style="display: none">
-								2002년 제 17회 월드컵축구대회를 기념하여 난지도 제 2쓰레기매립지에 조성된 공원으로 매년 가을 억새축제가 열리는 사진 명소로도 유명하다. 특히 하늘공원을 가는길 중간에 있는 메타세콰이아 길을 걷는것도 좋은데, 하늘로 길게 뻗은 나무들이 서울에서는 보기힘든 시원함을 연출해주기 때문이다. 특히 메타세콰이어 길은 신혼부부가 웨딩화보촬영을 올 만큼 커플들이 사진찍기에 좋은 명소이다. 연인과 특별한 사진을 찍고싶은 사람들에게 추천.
-							
-						</div><br>
-						<a href="javascript:getShow()" style="text-decoration: none; color: black; " onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 코스경로 자세히 <br></a>
-							<div id="hide1" style="display: none">
-							◾ 코스경로 : 월드컵경기장역 1번 출구- 하늘공원ㆍ메타세콰이어길 구간 - 하늘공원ㆍ하늘계단 구간 - 하늘공원ㆍ정상 구간 - 월드컵경기장역 1번 출구
-						<div>
-							◾ 길이 : 4km 
-						</div>
-						<div>
-							◾ 소요시간 : 2시간
- 						</div>
-						<div>
-							◾ 난이도 : 초급
-						</div>
-
 						
-							</div>
-			
-						
-
-
-
-					</div>
-			
-					
-				
-
 						<hr>
 					<div class="container pt-2" id="replace">
 					
-
-
-			<hr>
-	<div class="container my-3">
-	<table class="table" style="border-left: none; border-right: none;">
-    <thead>
-        <tr>
-            <th style="width: 80px;">별점</th>
-            <th style="width: 120px;">닉네임</th>
-            <th>후기</th>
-        	<th style="width: 150px;">작성일자</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="review2, loop : ${paging2}">
-		    <td style="width: 80px;" th:text="${review2.reviewStar2}"></td>
-            <td style="width: 120px;" th:text="${review2.id2}"></td>
-            <td th:text="${review2.reviewContents2}"></td>
-            <td style="width: 150px;" th:text="${#temporals.format(review2.createDate2, 'yyyy-MM-dd HH:mm')}"></td>
-        </tr>
-    </tbody>
-	</table>
-    <!-- 페이징처리 시작 -->
-    <div th:if="${!paging2.isEmpty()}">
-        <ul class="pagination justify-content-center">
-            <li class="page-item" th:classappend="${!paging2.hasPrevious} ? 'disabled'">
-                <a class="page-link"
-                    th:href="@{|?page=${paging2.number-1}|}">
-                    <span>이전</span>
-                </a>
-            </li>
-            <li th:each="page: ${#numbers.sequence(0, paging2.totalPages-1)}"
-            	th:if="${page >= paging2.number-2 and page <= paging2.number+2}"
-                th:classappend="${page == paging2.number} ? 'active'" 
-                class="page-item">
-                <a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>
-            </li>
-            <li class="page-item" th:classappend="${!paging2.hasNext} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=${paging2.number+1}|}">
-                    <span>다음</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- 페이징처리 끝 -->
-	<a th:href="@{/recommendcourse/create2}" class="btn btn-secondary">후기등록</a>
-	</div>
-	
-	<br><br><br><br>
-					
-
-
-			    <thead>
-			        <tr>
-			            <th style="width: 80px;">별점</th>
-			            <th style="width: 120px;">닉네임</th>
-			            <th>후기</th>
-			        	<th style="width: 150px;">작성일자</th>
-			
-			        </tr>
-			    </thead>
-			    <tbody>
-			        <tr th:each="review2, loop : ${paging2}">
-					    <td style="width: 80px;" th:text="${review2.reviewStar2}"></td>
-			            <td style="width: 120px;" th:text="${review2.id2}"></td>
-			            <td th:text="${review2.reviewContents2}"></td>
-			            <td style="width: 150px;" th:text="${#temporals.format(review2.createDate2, 'yyyy-MM-dd HH:mm')}"></td>
-			        </tr>
-			    </tbody>
-				</table>
-			    <!-- 페이징처리 시작 -->
-
-			    <div th:if="${!paging2.isEmpty()}">
-
-
-			    <div id="rpcontent" th:if="${!paging2.isEmpty()}">
-
-					
-			        <ul class="pagination justify-content-center">
-			            <li class="page-item" th:classappend="${!paging2.hasPrevious} ? 'disabled'">
-			                <a class="page-link"
-			                    th:href="|javascript:ajaxpage('${paging2.number -1}')|">
-			                    <span>이전</span>
-			                </a>
-			            </li>
-			            <li th:each="page2: ${#numbers.sequence(0, paging2.totalPages-1)}"
-			            	th:if="${page2 >= paging2.number-2 and page2 <= paging2.number+2}"
-			                th:classappend="${page2 == paging2.number} ? 'active'" 
-			                class="page-item">
-			                <a th:text="${page2}" class="page-link" id="ajaxt" th:href="|javascript:ajaxpage('${page2}')|"></a>
-			               
-			               
-			            </li>
-			            <li class="page-item" th:classappend="${!paging2.hasNext} ? 'disabled'">
-			                <a class="page-link" th:href="|javascript:ajaxpage('${paging2.number +1}')|">
-			                    <span>다음</span>
-			                </a>
-			            </li>
-			        </ul>
-			    </div>
-			    <!-- 페이징처리 끝 -->
-				<a id="rpcontent" th:href="@{/recommendcourse/create2}" class="btn btn-secondary">후기등록</a>
-
 					<table class="table" style="border-left: none; border-right: none;" id="rpcontent">
 						
 				    <thead>
@@ -267,7 +117,6 @@
 					</div>
 	
 					</div>
-
 				</div>
 				
 				<hr><br>
@@ -295,80 +144,6 @@
 								<div class="swiper-pagination swiper-pagination-black"></div>
 							</div>
 						</div>
-
-						<div id="div2"></div>
-						<a href="javascript:Getshow()"style="text-decoration: none; color: black;" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 설명보기</a>
-						<div id="hide2" style="display: none">
-								안양천은 한강의 지류로 안양시, 광명시, 서울 금천구, 구로구 , 양천구, 영등포구를 지나 성산대교 서쪽에서 한강에 합류하는 하천이다.
-							안양천 벚꽃길은 서울에서 가장 긴 벚꽃길로, 봄철이면 길게 조성된 제방로를 따라 벚꽃길사이를 여유롭게 산책할 수 있어 서울 벚꽃 명소이다.
-							하천을 따라 길이 만들어졌기에 대부분의 산책로가 평지며 남녀노소 할것 없이 모두 걷기 편하게 조성되어있고, 근처에 오목교역과 양평역이 있어 교통편도 좋은편이다.
-							따뜻해지는 봄에 사랑하는 사람과 함께 걸어보는것을 추천.
-						</div><br>
-						<a href="javascript:getshow()" style="text-decoration: none; color: black; " onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">◾ 코스경로 자세히</a>
-							<div id="hide3" style="display: none">
-							◾ 코스경로 : 오목교역 4번 출구- 오목수변공원ㆍ실개천 생태공원구간 - 안양천 벚꽃길 구간 -  양평역 1번 출구
-						
-						<div>
-							◾ 길이 : 2km 
-						</div>
-						<div>
-							◾ 소요시간 : 1시간
- 						</div>
-						<div>
-							◾ 난이도 : 초급
-						</div>						
-
-						
-					</div>
-					
-						<hr>
-			<div class="container my-3">
-				<table class="table" style="border-left: none; border-right: none;">
-			    <thead>
-			        <tr>
-			            <th style="width: 80px;">별점</th>
-			            <th style="width: 120px;">닉네임</th>
-			            <th>후기</th>
-			        	<th style="width: 150px;">작성일자</th>
-			
-			        </tr>
-			    </thead>
-			    <tbody>
-			        <tr th:each="review3, loop : ${paging3}">
-					    <td style="width: 80px;" th:text="${review3.reviewStar3}"></td>
-			            <td style="width: 120px;" th:text="${review3.id3}"></td>
-			            <td th:text="${review3.reviewContents3}"></td>
-			            <td style="width: 150px;" th:text="${#temporals.format(review3.createDate3, 'yyyy-MM-dd HH:mm')}"></td>
-			        </tr>
-			    </tbody>
-				</table>
-			    <!-- 페이징처리 시작 -->
-			    <div th:if="${!paging3.isEmpty()}">
-			        <ul class="pagination justify-content-center">
-			            <li class="page-item" th:classappend="${!paging3.hasPrevious} ? 'disabled'">
-			                <a class="page-link"
-			                    th:href="@{|?page3=${paging3.number-1}#div2|}">
-			                    <span>이전</span>
-			                </a>
-			            </li>
-			            <li th:each="page3: ${#numbers.sequence(0, paging3.totalPages-1)}"
-			            	th:if="${page3 >= paging3.number-2 and page3 <= paging3.number+2}"
-			                th:classappend="${page3 == paging3.number} ? 'active'" 
-			                class="page-item">
-			                <a th:text="${page3}" class="page-link" th:href="@{|?page3=${page3}#div2|}"></a>
-			            </li>
-			            <li class="page-item" th:classappend="${!paging3.hasNext} ? 'disabled'">
-			                <a class="page-link" th:href="@{|?page3=${paging3.number+1}#div2|}">
-			                    <span>다음</span>
-			                </a>
-			            </li>
-			        </ul>
-			    </div>
-			    <!-- 페이징처리 끝 -->
-				<a th:href="@{/recommendcourse/create3}" class="btn btn-secondary">후기등록</a>
-				</div>
-	
-
 
 						<div class="rcm-text">안양천은 한강의 지류로 안양시, 광명시, 서울 금천구, 구로구 , 양천구, 영등포구를 지나 성산대교 서쪽에서 한강에 합류하는 하천</div>
 						<div class="rcm-text">안양천 벚꽃길은 서울에서 가장 긴 벚꽃길로, 봄철이면 길게 조성된 제방로를 따라 여유롭게 산책할 수 있는 서울 벚꽃 명소이다.</div>
@@ -535,100 +310,7 @@
 				</div>
 	</div>
 
-</div>
-
-	
-<script>
-new Swiper('.swiper-container', {
-
-	slidesPerView : 1, // 동시에 보여줄 슬라이드 갯수
-	spaceBetween : 0, // 슬라이드간 간격
-	slidesPerGroup : 1, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
-
-	// 그룹수가 맞지 않을 경우 빈칸으로 메우기
-	// 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
-	loopFillGroupWithBlank : true,
-
-	loop : true, // 무한 반복
-
-	pagination : { // 페이징
-		el : '.swiper-pagination',
-		clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
-	},
-	navigation : { // 네비게이션
-		nextEl : '.swiper-button-next', // 다음 버튼 클래스명
-		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
-	},
-});
-
-function GetShow(){	 // 설명 자세히
-		var con = document.getElementById("hide");
-		if(con.style.display == "none"){
-			con.style.display = "block"; 
-		}
-		else{
-			con.style.display = "none"
-		}
-	}
-	
-	function getShow(){	 // 코스 정보 자세히
-		var con = document.getElementById("hide1");
-		if(con.style.display == "none"){
-			con.style.display = "block"; 
-		}
-		else{
-			con.style.display = "none"
-		}
-	}
-	
-function Getshow(){	 // 설명 자세히
-		var con = document.getElementById("hide2");
-		if(con.style.display == "none"){
-			con.style.display = "block"; 
-		}
-		else{
-			con.style.display = "none"
-		}
-	}
-	
-	function getshow(){	 // 코스 정보 자세히
-		var con = document.getElementById("hide3");
-		if(con.style.display == "none"){
-			con.style.display = "block"; 
-		}
-		else{
-			con.style.display = "none"
-		}
-	}
-
-	function Get_Show(){	 // 설명 자세히
-		var con = document.getElementById("hide4");
-		if(con.style.display == "none"){
-			con.style.display = "block"; 
-		}
-		else{
-			con.style.display = "none"
-		}
-	}
-	
-	function get_Show(){	 // 코스 정보 자세히
-		var con = document.getElementById("hide5");
-		if(con.style.display == "none"){
-			con.style.display = "block"; 
-		}
-		else{
-			con.style.display = "none"
-		}
-	}
-
-
-</script>
-</div>
-
-
-
 	<script type="text/javascript" th:src="@{/rcm/rcm.js}"></script>
 </div>
 </body>
-
 </html>
