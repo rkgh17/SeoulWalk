@@ -9,7 +9,7 @@ SpringBoot + html + thymeleaf + MySQL : 서울 둘레길 코스 정보/추천 �
 
 <a href="https://seoulwalk.kro.kr">사이트 링크</a>
 
-<br/><br/>
+<br/>
 
 ## 🕰️ 개발 기간
 22.12.16 - 23.01.27 ( 6주 )
@@ -32,6 +32,26 @@ SpringBoot + html + thymeleaf + MySQL : 서울 둘레길 코스 정보/추천 �
 <br/>
 
 ## 📌 주요 기능
+
+### 메인 화면
+
+<details>
+<summary>메인화면 img</summary>
+<div markdown="1">
+
+<img src="https://user-images.githubusercontent.com/82715109/216530432-cbaa15fc-6cc6-4486-bcd8-73478863bdb6.png" width="1200" height="1000" />
+
+</div>
+</details>
+
+<details>
+<summary>메인화면 모바일 img</summary>
+<div markdown="1">
+
+<img src="https://user-images.githubusercontent.com/82715109/216531118-316d45a2-1336-4e04-8242-0b46b48204a3.png" />
+
+</div>
+</details>
 
 ### 둘레길 코스 - <a href="https://github.com/Wanghyemin/SpringBootProject-MuseMarket/wiki/메인-및-마이-페이지" >상세보기 - WIKI 이동</a>
 - 코스 시각화 : 네이버 지도 api를 통해 지도 표시, DB(경도, 위도) - Controller - Javascript 를 통해 경로 시각화
