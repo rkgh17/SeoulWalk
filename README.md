@@ -76,12 +76,12 @@ SpringBoot + html + thymeleaf + MySQL : 서울 둘레길 코스 정보/추천 �
 
 <br>
 
-### 소셜 로그인 - <a href="" >상세보기 - WIKI 이동</a>
+### 소셜 로그인 - <a href="https://github.com/rkgh17/SeoulWalk/wiki/%EC%86%8C%EC%85%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8" >상세보기 - WIKI 이동</a>
 - 소셜 로그인  :  OAUTH2.0 라이브러리 사용, 로그인 시 세션(Session) 생성
 - 접근 제한 : 세션값을 검증하여 로그인 페이지로 이동, 로그인 시 이전 페이지로 이동
 
 <br>
 
-### 커뮤니티 - <a href="" >상세보기 - WIKI 이동</a> 
+### 커뮤니티 - <a href="https://github.com/rkgh17/SeoulWalk/wiki/%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0" >상세보기 - WIKI 이동</a> 
 - 공지사항 : 관리자 계정만 사용 가능하도록 접근 제한
 - 커뮤니티 : CRUD기능, 추천, JPA를 활용한 게시글 페이징과 검색
