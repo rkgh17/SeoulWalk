@@ -168,7 +168,7 @@
 	        <textarea class="comment" id="aft1" sec:authorize="isAnonymous()" disabled th:field="*{content}"></textarea>
 	        <textarea class="comment" sec:authorize="isAuthenticated()" th:field="*{content}"></textarea>
 	        <div style="display:flex; justify-content:end;">
-	        <input type="submit" value="댓글등록" class="btn btn-success my-2">
+	        <input type="submit" sec:authorize="isAuthenticated()" value="댓글등록" class="btn btn-success my-2">
 	        </div>
 	    </form>
 		

@@ -14,11 +14,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.human.seoulroad.user.CustomOAuth2UserService;
 import com.human.seoulroad.user.SessionUserDTO;
 import com.human.seoulroad.user.SiteUser;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
@@ -60,7 +62,7 @@ public class NoticeController {
 		return "bbs/bbsNoticeForm";
 	}
 
-	// 질문 등록 처리 메서드
+	// 공지 등록 처리 메서드
 	@PostMapping("notice/create")
 	// 제목, 내용, 작성자를 파라미터로 받음
 	public String questionCreate(@Valid NoticeForm noticeForm, BindingResult bindingResult, Principal principal) {
@@ -69,9 +71,9 @@ public class NoticeController {
             return "bbs/bbsNoticeForm";
         }
 
-        // 로그인 안한경우
+        // 세션 만료
         if(userService.getSession() == null) {
-        	return "login";
+        	return "redirect:/main";
         }else { // 로그인한경우
         	SessionUserDTO userinfo = userService.getSession();
         	SiteUser siteUser = this.userService.getUser(userinfo.getEmail());
@@ -142,15 +144,17 @@ public class NoticeController {
     // 공지 추천 메서드
     @PreAuthorize("isAuthenticated()") // 로그인한 사람만 추천 가능
     @GetMapping("/notice/vote/{id}")
-    public String questionVote(Principal principal, @PathVariable("id") Integer id) {
-    	Notice notice = this.noticeService.getNotice(id);
+    public String questionVote(Principal principal, @PathVariable("id") Integer id, HttpServletRequest request, RedirectAttributes re) {
         
         // 로그인 하지 않을 시 추천 x
         if(userService.getSession() == null) {
-        	return "login";
+			String uri = request.getHeader("Referer");
+			re.addFlashAttribute("referer",uri);
+        	return "redirect:/user/login";
         }
         
         else { // 로그인시 수행되는 메서드
+        	Notice notice = this.noticeService.getNotice(id);
         	SiteUser siteUser = this.userService.getUser(userService.getSession().getEmail());
         
 	        // 추천 중복검사

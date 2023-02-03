@@ -14,12 +14,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.human.seoulroad.answer.AnswerForm;
 import com.human.seoulroad.user.CustomOAuth2UserService;
 import com.human.seoulroad.user.SessionUserDTO;
 import com.human.seoulroad.user.SiteUser;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -61,12 +63,14 @@ public class QuestionController {
 	
 	// 질문 등록 메서드 
 	@GetMapping("qna/create")
-	public String questionCreate(QuestionForm questionForm) {
+	public String questionCreate(QuestionForm questionForm, HttpServletRequest request, RedirectAttributes re) {
 		if(userService.getSession() == null) {
-			return "login";
+			String uri = request.getHeader("Referer");
+			re.addFlashAttribute("referer",uri);
+			return "redirect:/user/login";
+		}else {
+			return "bbs/bbsQnaForm";
 		}
-		
-        return "bbs/bbsQnaForm";
     }
 	
 	// 질문 등록 처리 메서드
@@ -80,7 +84,7 @@ public class QuestionController {
 
         // 로그인 안한경우
         if(userService.getSession() == null) {
-        	return "login";
+        	return "redirect:/user/login";
         }else { // 로그인한경우
         	SessionUserDTO userinfo = userService.getSession();
         	SiteUser siteUser = this.userService.getUser(userinfo.getEmail());
@@ -151,12 +155,13 @@ public class QuestionController {
 
     // 추천 URL 매핑 (GET)
     @GetMapping("/qna/vote/{id}")
-    public String questionVote(Principal principal, @PathVariable("id") Integer id) {
+    public String questionVote(Principal principal, @PathVariable("id") Integer id, HttpServletRequest request,RedirectAttributes re) {
         Question question = this.questionService.getQuestion(id);
         
         // 로그인 하지 않을 시 추천 x
         if(userService.getSession() == null) {
-        	return "login";
+        	re.addFlashAttribute("referer",request.getHeader("Referer"));
+        	return "redirect:/user/login";
         }        
         else { // 로그인시 수행되는 메서드
 	        

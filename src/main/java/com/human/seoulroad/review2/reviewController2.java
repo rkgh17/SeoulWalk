@@ -48,7 +48,7 @@ public class reviewController2 {
     public String reviewCreate2(reviewForm2 reviewForm2) {
     	
 		if(userService.getSession() == null) {
-			return "login";
+			return "redirect:/user/login";
 		}
     	
         return "reviewForm2";
@@ -56,14 +56,14 @@ public class reviewController2 {
     @GetMapping("/create3")
     public String reviewCreate3(reviewForm3 reviewForm3) {
 		if(userService.getSession() == null) {
-			return "login";
+			return "redirect:/user/login";
 		}    	
         return "reviewForm3";
     }
     @GetMapping("/create4")
     public String reviewCreate4(reviewForm4 reviewForm4) {
 		if(userService.getSession() == null) {
-			return "login";
+			return "redirect:/user/login";
 		}    	
         return "reviewForm4";
     }

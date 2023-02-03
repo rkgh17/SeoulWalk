@@ -12,10 +12,15 @@
 
 
 
-/* 메인상단바 */
 @media(max-width:500px){
 	.lay{
 		max-width:100%;
+	}
+	.table{
+		width:100%;
+	}
+	.table th, tr, td{
+		font-size:11px;
 	}
 }
 

@@ -70,7 +70,7 @@ public class AnswerController {
         
         // 로그인 하지 않을 시 추천 x
         if(userService.getSession() == null) {
-        	return "login";
+        	return "redirect:/user/login";
         }                
 
         else { // 로그인시 수행되는 메서드

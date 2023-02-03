@@ -9,9 +9,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import com.human.seoulroad.user.CustomAuthSuccessHandler;
 import com.human.seoulroad.user.CustomOAuth2UserService;
 
 import lombok.RequiredArgsConstructor;
@@ -31,6 +33,8 @@ public class SecurityConfig{
 	
 	@Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		
+		
 		http.csrf().disable();
 		
 		
@@ -52,7 +56,7 @@ public class SecurityConfig{
                 	.invalidateHttpSession(true)
         		.and()
         			.oauth2Login()
-        			.defaultSuccessUrl("/")
+        			.successHandler(new CustomAuthSuccessHandler())
         			.userInfoEndpoint()
         			.userService(customOAuth2UserService)
                 ;

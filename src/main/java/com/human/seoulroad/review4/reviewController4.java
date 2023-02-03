@@ -40,7 +40,7 @@ public class reviewController4 {
     public String reviewCreate8(reviewForm8 reviewForm8) {
     	
 		if(userService.getSession() == null) {
-			return "login";
+			return "redirect:/user/login";
 		}
     	
         return "reviewForm8";
@@ -49,7 +49,7 @@ public class reviewController4 {
     @GetMapping("/create9")
     public String reviewCreate9(reviewForm9 reviewForm9) {
 		if(userService.getSession() == null) {
-			return "login";
+			return "redirect:/user/login";
 		}    	
         return "reviewForm9";
     }

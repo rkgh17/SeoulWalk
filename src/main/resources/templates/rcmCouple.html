@@ -16,15 +16,10 @@
 		<div class="rcm-side">
 			<div class="rcm-side02">
 
-				<div class="rcmnav" style="cursor:pointer;" onClick="location.href='/recommendcourse/couple'" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">커플코스</div><hr>
-				<div class="rcmnav" style="cursor:pointer;" onClick="location.href='/recommendcourse/family'" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">가족코스</div><hr>
-				<div class="rcmnav" style="cursor:pointer;" onClick="location.href='/recommendcourse/restaurant'" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">맛집코스</div><hr>
-				<div class="rcmnav" style="cursor:pointer;" onClick="location.href='/recommendcourse/nature'" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">자연코스</div>
-				<div style="cursor:pointer;" onClick="location.href='/recommendcourse/couple'">커플코스</div><hr>
-				<div style="cursor:pointer;" onClick="location.href='/recommendcourse/family'">가족코스</div><hr>
-				<div style="cursor:pointer;" onClick="location.href='/recommendcourse/restaurant'">맛집코스</div><hr>
-				<div style="cursor:pointer;" onClick="location.href='/recommendcourse/nature'">자연코스</div>
-
+				<div class="rcmnav" style="cursor:pointer;" onClick="location.href='/recommendcourse/couple'" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">커플</div><hr>
+				<div class="rcmnav" style="cursor:pointer;" onClick="location.href='/recommendcourse/family'" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">가족</div><hr>
+				<div class="rcmnav" style="cursor:pointer;" onClick="location.href='/recommendcourse/restaurant'" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">맛집</div><hr>
+				<div class="rcmnav" style="cursor:pointer;" onClick="location.href='/recommendcourse/nature'" onmouseover="this.style.color='#1ABC9C'" onmouseout="this.style.color='black'">자연</div>
 			</div>
 		</div>
 		
@@ -74,7 +69,6 @@
 					<div class="container pt-2" id="replace">
 					
 					<table class="table" style="border-left: none; border-right: none;" id="rpcontent">
-						
 				    <thead>
 				        <tr>
 				            <th style="width: 80px;">별점</th>
@@ -86,7 +80,7 @@
 				    </thead>
 				    <tbody>
 				        <tr th:each="review2, loop : ${paging2}">
-						    <td style="width: 80px;" th:text="${review2.reviewStar2}"></td>
+						    <td th:text="${review2.reviewStar2}"></td>
 				            <td style="width: 120px;" th:text="${review2.id2}"></td>
 				            <td th:text="${review2.reviewContents2}"></td>
 				            <td style="width: 150px;" th:text="${#temporals.format(review2.createDate2, 'yyyy-MM-dd HH:mm')}"></td>

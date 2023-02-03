@@ -173,8 +173,4 @@ table, tr, td {
 	.swiper-container{
 		width:290px;
 	}
-	.table th, tr, td{
-		width:auto;
-		font-size:11px;
-	}
 }
