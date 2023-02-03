@@ -405,7 +405,7 @@ border: 1px solid red;
   width: 250px;
 }
 .faq-box__answer01{
-  font-size: 1%;
+  font-size: 13px;
 }
 }
 @media (max-width:700px){
@@ -418,7 +418,7 @@ border: 1px solid red;
   width: 120px;
 }
 .faq-box__answer01{
-  font-size: 1%;
+  font-size: 11px;
 }
 .b01{
   font-size: 90%;
