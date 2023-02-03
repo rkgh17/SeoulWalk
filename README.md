@@ -60,18 +60,18 @@ SpringBoot + html + thymeleaf + MySQL : 서울 둘레길 코스 정보/추천 �
 
 <br>
 
-### 둘레길 추천 코스 - <a href="" >상세보기 - WIKI 이동</a>
+### 둘레길 추천 코스 - <a href="https://github.com/rkgh17/SeoulWalk/wiki/%EB%91%98%EB%A0%88%EA%B8%B8-%EC%B6%94%EC%B2%9C-%EC%BD%94%EC%8A%A4" >상세보기 - WIKI 이동</a>
 - 코스 리뷰 : 각 코스별 리뷰 게시판 구현, Ajax를 사용한 비동기 페이징 구현
 
 <br>
 
-### 둘레길 유형 테스트 - <a href="" >상세보기 - WIKI 이동</a>
+### 둘레길 유형 테스트 - <a href="https://github.com/rkgh17/SeoulWalk/wiki/%EB%91%98%EB%A0%88%EA%B8%B8-%EC%9C%A0%ED%98%95-%ED%85%8C%EC%8A%A4%ED%8A%B8" >상세보기 - WIKI 이동</a>
 - 유형 테스트 : 8가지 질문을 통해 코스 추천
 - sns 공유 : 테스트와 테스트 결과를 sns로 공유
 
 <br>
 
-### 그밖의 길 - <a href="" >상세보기 - WIKI 이동</a>
+### 그밖의 길 - <a href="https://github.com/rkgh17/SeoulWalk/wiki/%EA%B7%B8%EB%B0%96%EC%9D%98-%EA%B8%B8" >상세보기 - WIKI 이동</a>
 - 그밖의 길 : JPA를 활용하여 지역/코스길이/시간/난이도별 산책로 목록 검색
 
 <br>

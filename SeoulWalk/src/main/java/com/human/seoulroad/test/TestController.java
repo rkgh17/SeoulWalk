@@ -145,6 +145,7 @@ public class TestController {
 			weight[2] = weight[2] + high;
 		}
 		
+		// 인덱스 반환
 		int[] max = {0};
 		int maxindex = 0;
 		for(int i = 0 ; i<weight.length ; i++) {
