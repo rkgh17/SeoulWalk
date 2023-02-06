@@ -1,5 +1,5 @@
 # Final Project - Seoul Walk
-SpringBoot + html + thymeleaf + MySQL : 서울 둘레길 코스 정보/추천 사이트
+SpringBoot + HTML + Thymeleaf + MySQL : 서울 둘레길 코스 정보/추천 사이트
 <br/><br/>
 
 ## 🖥️ 프로젝트 소개
