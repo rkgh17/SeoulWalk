@@ -27,7 +27,7 @@ SpringBoot + html + thymeleaf + MySQL : 서울 둘레길 코스 정보/추천 �
 ## ⚙️ 개발 환경
 - `Java 17`
 - **IDE** : STS 4.16.1
-- **Framework** : Springboot(3.0.1)
+- **Framework** : Springboot(3.0.1), Thymeleaf
 - **Database** : MySQL(8.0.31)
 - **ORM** : JPA
 - **Build** : Gradle(7.6)
