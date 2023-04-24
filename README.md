@@ -7,7 +7,7 @@ SpringBoot + HTML + Thymeleaf + MySQL : 서울 둘레길 코스 정보/추천 �
 
 <br/>
 
-<a href="https://seoulwalk.kro.kr">사이트 링크</a>
+<a href="https://seoulwalk.kro.kr">~~사이트 링크~~</a>
 
 <a href="https://github.com/rkgh17/SeoulWalk/blob/hjh/SeoulWalk/pdf/Seoul%20Walk.pdf">PDF 링크</a>
 
